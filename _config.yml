@@ -22,14 +22,14 @@ permalink: /:year/:month/:day/:title
 repository: nhannguyen95/nhannguyen95.github.io
 paginate: 5
 
-# MatJek specific configurations
+# sSecific configurations
 github_profile: "https://github.com/nhannguyen95"
 user: "Nhan Nguyen"
 user_email: "nhannguyenmath95@gmail.com"
 contact_url: "https://goo.gl/tVljbV"
 # google_tracking_id: "UA-96359860-1"
 google_site_verification: "UA-96359860-1"
-disqus_shortname: "myblog-fsfstyclpw"
+disqus_shortname: "nhannguyen-1"
 
 # Build settings
 markdown: kramdown
