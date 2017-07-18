@@ -2,6 +2,7 @@
 layout: page
 title: "Algorithms"
 css: ["post.css", "sidebar-post-nav.css"]
+no-post-nav: 0
 ---
 
 ##### **Implementation, ad-hoc**
