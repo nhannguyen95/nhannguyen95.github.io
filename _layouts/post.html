@@ -1,10 +1,11 @@
 ---
 layout: default
-css: ["post.css"]
+css: ["post.css", "sidebar-post-nav.css"]
 js: ["post.js"]
 ---
 <div id="post-info">
-  <h3>{{page.title}}</h3>
+  <!-- <h3>{{page.title}}</h3> -->
+  <br />
   <ul class="collapsible hoverable" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
@@ -37,9 +38,19 @@ js: ["post.js"]
 </div>
 <div class="divider"></div>
 <div class="row">
+  {% if page.no-post-nav == 1 %}
   <div class="col s12">
     {{ content }}
   </div>
+  {% else %}
+  <div class="col s8" id="article">
+    {{ content }}
+  </div>
+
+  <div class="col s4">
+    {% include sidebar-post-nav.html %}
+  </div>
+  {% endif %}
 </div>
 {% if site.disqus_shortname and page.comments %}
 <div id="disqus_thread"></div>
