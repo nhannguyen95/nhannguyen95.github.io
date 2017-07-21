@@ -33,7 +33,7 @@ Các đỉnh được đánh số từ 1 đến n.
 **Output:**
 * Một dòng duy nhất là chi phí tối thiểu.
 
-##### **Lời giải**
+##### **Thuật toán**
 
 Xoá các đỉnh theo thứ tự giảm dần giá trị v của chúng.
 
@@ -41,7 +41,7 @@ Chứng minh: xét cạnh (x, y), khi cạnh này bị xoá thì v<sub>x</sub> h
 
 => Nếu ta xoá đỉnh theo thứ tự giảm dần v, thì min(v<sub>x</sub>,v<sub>y</sub>) được cộng vào => thu được chi phí tối thiểu.
 
-##### **Thuật toán**
+##### **Source code**
 
 Ngôn ngữ: C++.
 

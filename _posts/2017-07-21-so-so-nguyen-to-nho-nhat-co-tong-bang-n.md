@@ -36,7 +36,7 @@ Ví dụ:
 
 *(27 = 2 + 2 + 23)*
 
-##### **Lời giải**
+##### **Thuật toán**
 
 Với N = 1, bài toán không có lời giải.
 
@@ -48,7 +48,7 @@ Nếu N lẻ:
 * Các số nguyên tố > 2 là số lẻ, tổng của các số lẻ là số chẵn => trong cách phân tích N thành tổng các số nguyên tố, phải có một số nguyên tố chẵn, mà 2 là số nguyên tố chẵn duy nhất => N = 2 + (N-2). Đến đây, nếu (N-2) là số nguyên tố, thì đáp số là 2. Ngược lại:
 * Phân tích N = 3 + (N-3), N-3 là một số chẵn, lại theo [giả thuyết Goldbach](https://en.wikipedia.org/wiki/Goldbach%27s_conjecture), N-3 là tổng của 2 số nguyên tố => kết quả là 3.
 
-##### **Thuật toán**
+##### **Source code**
 
 Ngôn ngữ: C++.
 

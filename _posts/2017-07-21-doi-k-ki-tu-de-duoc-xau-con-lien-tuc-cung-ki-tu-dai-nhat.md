@@ -39,7 +39,7 @@ output:
 4
 {% endhighlight %}
 
-##### **Lời giải**
+##### **Thuật toán**
 
 Two pointers:
 
@@ -56,7 +56,7 @@ ababbbb -> độ dài cần tìm = 4.
 
 Làm tương tự khi thay đổi từ 'b' sang 'a', cập nhập đáp án tại mỗi thay đổi.
 
-##### **Thuật toán**
+##### **Source code**
 
 Ngôn ngữ: C++.
 
