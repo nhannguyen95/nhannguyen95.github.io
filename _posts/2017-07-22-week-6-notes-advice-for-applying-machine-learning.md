@@ -146,3 +146,6 @@ J_{test}(\theta)=\frac{1}{2m_{test}}\sum_{i=1}^{m_{test}}(h_{\theta}(x_{test}^{(
 at i<sup>th</sup> try, we minimize J(θ) in order to find θ (perform on the training set). Then we choose one that has lowest J<sub>cv</sub>(*chosen* θ) among 12 tries (perform on cross validation). Finally report how well it does on the test set (by computing J<sub>test</sub>(*chosen* θ)).
 
 **Bias/variance as a function of the regularization parameter λ**
+
+<center><img src="http://i.imgur.com/B50IFz9.png"/ width="280"></center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
