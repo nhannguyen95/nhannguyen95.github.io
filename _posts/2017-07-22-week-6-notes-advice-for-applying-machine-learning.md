@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Week 5 notes: Neural Networks: Learning"
+title:  "Week 6 notes: Advice for applying machine learning"
 date: 2017-07-22 10:24:00 +0700
 categories: machine-learning
 tags: notes
@@ -102,3 +102,5 @@ If J<sub>cv</sub>(θ) or J<sub>test</sub>(θ) is high. Is it a bias problem (sma
 
 * Bias (underfit): J<sub>train</sub>(θ) is high, J<sub>cv</sub>(θ) ~ J<sub>train</sub>(θ).
 * Variance (overfir): J<sub>train</sub>(θ) is low, J<sub>cv</sub>(θ) >> J<sub>train</sub>(θ).
+
+###### **Regularization and Bias/Variance**
