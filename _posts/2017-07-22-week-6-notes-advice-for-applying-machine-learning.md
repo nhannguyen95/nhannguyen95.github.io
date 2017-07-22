@@ -151,5 +151,5 @@ at i<sup>th</sup> try, we minimize J(θ) in order to find θ (perform on the tra
 
 **Bias/variance as a function of the regularization parameter λ**
 
-<center><img src="http://i.imgur.com/B50IFz9.png"/ width="280"></center>
+<center><img src="http://i.imgur.com/B50IFz9.png" width="280"/></center>
 <center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
