@@ -125,17 +125,21 @@ Intermediate λ **->** good => how can we choose this value?
 **Choosing the regularization parameter λ**
 
 Suppose we have model:
+
 $$ h_{\theta}(x)=\theta_{0} + \theta_{1}x + \theta_{2}x^{2} + \theta_{3}x^{3} + \theta_{4}x^{4}$$
 
 $$ J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^{2} + \frac{\lambda}{2m}\sum_{j=1}^{n}\theta^{2}_{j}$$
 
 And the error function of the datasets:
+
 $$ J_{train}(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^{2}$$
 
 $$ J_{cv}(\theta)=\frac{1}{2m_{cv}}\sum_{i=1}^{m_{cv}}(h_{\theta}(x_{cv}^{(i)})-y_{cv}^{(i)})^{2}$$
 
 $$
 J_{test}(\theta)=\frac{1}{2m_{test}}\sum_{i=1}^{m_{test}}(h_{\theta}(x_{test}^{(i)})-y_{test}^{(i)})^{2}$$
+
+
 1. Try λ = 0
 2. Try λ = 0.01 (double λ)
 3. Try λ = 0.02
