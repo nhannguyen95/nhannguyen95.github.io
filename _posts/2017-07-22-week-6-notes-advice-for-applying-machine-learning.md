@@ -9,6 +9,7 @@ comments: 1
 ---
 
 ##### **Introduction**
+No notes.
 
 ##### **Evaluating a Learning Algorithm**
 
@@ -56,18 +57,27 @@ Performance on the training set is not a good measure of generalization performa
 
 Suppose we have 10 models:
 1. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x
-2. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup> ...
+2. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup>
 
+...
 10. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + ... + θ<sub>1</sub>x<sup>10</sup>
 
-for each model, we fit it to the training set and this will give us 10 parameters θ:
+for each model, we fit it to the training set and this will give us 10 parameters θ (by minimizing J(θ)):
 1. θ<sup>(1)</sup>
-2. θ<sup>(2)</sup> ...
+2. θ<sup>(2)</sup>
+
+...
 10. θ<sup>(10)</sup>
+
+for example J(θ) in linear regression problem:
+$$ J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^{2} + \frac{\lambda}{2m}\sum_{j=1}^{n}\theta^{2}_{j}$$
+
 
 in order to select a model, we can compute the error of these parameters on the test set, then see which model has the lowest test set error:
 1. J<sub>test</sub>(θ<sup>(1)</sup>)
-2. J<sub>test</sub>(θ<sup>(2)</sup>) ...
+2. J<sub>test</sub>(θ<sup>(2)</sup>)
+
+...
 10. J<sub>test</sub>(θ<sup>(10)</sup>)
 
 However, this will not be a fair estimate of how well the hypothesis generalizes, because we select the J<sub>test</sub> as a function with parameter d - the degree of the models -> it's something like we get stuck in overfitting on the test set, there is no warranty that the chosen model will do well on new examples that it hasn't been seen before.
@@ -90,8 +100,9 @@ Then, instead of choosing the model that has the lowest test set error, we selec
 ##### **Bias vs. Variance**
 
 ###### **Diagnosing Bias vs. Variance**
+*(Bias/variance as a function of the polynome degree)*
 
-High bias problem -> θ ~ 0 -> underfitting problem.
+High bias problem **->** θ ~ 0 **->** underfitting problem.
 
 High variance (bậc tự do) problem -> high degree model, many features... -> overfitting problem.
 
@@ -104,3 +115,34 @@ If J<sub>cv</sub>(θ) or J<sub>test</sub>(θ) is high. Is it a bias problem (sma
 * Variance (overfir): J<sub>train</sub>(θ) is low, J<sub>cv</sub>(θ) >> J<sub>train</sub>(θ).
 
 ###### **Regularization and Bias/Variance**
+
+Large λ **->** θ is heavily penalized **->** θ ~ 0 **->** h<sub>θ</sub>(x) ~ θ<sub>0</sub> **->** underfitting.
+
+Small λ **->** θ don't change much **->** high-order polynomials exist **->** possibly overfitting.
+
+Intermediate λ **->** good => how can we choose this value?
+
+**Choosing the regularization parameter λ**
+
+Suppose we have model:
+$$ h_{\theta}(x)=\theta_{0} + \theta_{1}x + \theta_{2}x^{2} + \theta_{3}x^{3} + \theta_{4}x^{4}$$
+
+$$ J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^{2} + \frac{\lambda}{2m}\sum_{j=1}^{n}\theta^{2}_{j}$$
+
+And the error function of the datasets:
+$$ J_{train}(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^{2}$$
+
+$$ J_{cv}(\theta)=\frac{1}{2m_{cv}}\sum_{i=1}^{m_{cv}}(h_{\theta}(x_{cv}^{(i)})-y_{cv}^{(i)})^{2}$$
+
+$$
+J_{test}(\theta)=\frac{1}{2m_{test}}\sum_{i=1}^{m_{test}}(h_{\theta}(x_{test}^{(i)})-y_{test}^{(i)})^{2}$$
+1. Try λ = 0
+2. Try λ = 0.01 (double λ)
+3. Try λ = 0.02
+
+...
+12. Try λ = 10.24
+
+at i<sup>th</sup> try, we minimize J(θ) in order to find θ (perform on the training set). Then we choose one that has lowest J<sub>cv</sub>(*chosen* θ) among 12 tries (perform on cross validation). Finally report how well it does on the test set (by computing J<sub>test</sub>(*chosen* θ)).
+
+**Bias/variance as a function of the regularization parameter λ**
