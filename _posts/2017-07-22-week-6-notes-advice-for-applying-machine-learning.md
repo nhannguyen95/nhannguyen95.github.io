@@ -95,11 +95,8 @@ High bias problem -> θ ~ 0 -> underfitting problem.
 
 High variance (bậc tự do) problem -> high degree model, many features... -> overfitting problem.
 
-<div>
-<center><img src="http://i.imgur.com/z5AJ8iV.png" ...></center>
+<center><img src="http://i.imgur.com/z5AJ8iV.png"/></center>
 <center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center
-<br></br>
-</div>
 
 If J<sub>cv</sub>(θ) or J<sub>test</sub>(θ) is high. Is it a bias problem (small d) or a variance problem (large d)?:
 
