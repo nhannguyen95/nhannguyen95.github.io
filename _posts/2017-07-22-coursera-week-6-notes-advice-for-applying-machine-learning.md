@@ -56,29 +56,29 @@ Performance on the training set is not a good measure of generalization performa
 **Model Selection problem**
 
 Suppose we have 10 models:
-1. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x
-2. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup>
+*  h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x
+*  h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + θ<sub>2</sub>x<sup>2</sup>
 
 ...
-10. h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + ... + θ<sub>1</sub>x<sup>10</sup>
+* h<sub>θ</sub>(x) = θ<sub>0</sub> + θ<sub>1</sub>x + ... + θ<sub>1</sub>x<sup>10</sup>
 
 for each model, we fit it to the training set and this will give us 10 parameters θ (by minimizing J(θ)):
-1. θ<sup>(1)</sup>
-2. θ<sup>(2)</sup>
+* θ<sup>(1)</sup>
+* θ<sup>(2)</sup>
 
 ...
-10. θ<sup>(10)</sup>
+* θ<sup>(10)</sup>
 
 for example J(θ) in linear regression problem:
 $$ J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y^{(i)})^{2} + \frac{\lambda}{2m}\sum_{j=1}^{n}\theta^{2}_{j}$$
 
 
 in order to select a model, we can compute the error of these parameters on the test set, then see which model has the lowest test set error:
-1. J<sub>test</sub>(θ<sup>(1)</sup>)
-2. J<sub>test</sub>(θ<sup>(2)</sup>)
+* J<sub>test</sub>(θ<sup>(1)</sup>)
+* J<sub>test</sub>(θ<sup>(2)</sup>)
 
 ...
-10. J<sub>test</sub>(θ<sup>(10)</sup>)
+* J<sub>test</sub>(θ<sup>(10)</sup>)
 
 However, this will not be a fair estimate of how well the hypothesis generalizes, because we select the J<sub>test</sub> as a function with parameter d - the degree of the models -> it's something like we get stuck in overfitting on the test set, there is no warranty that the chosen model will do well on new examples that it hasn't been seen before.
 
@@ -106,8 +106,11 @@ High bias problem **->** θ ~ 0 **->** underfitting problem.
 
 High variance (bậc tự do) problem -> high degree model, many features... -> overfitting problem.
 
+<hr>
 <center><img src="http://i.imgur.com/z5AJ8iV.png"/></center>
+<center>Figure 1. Bias/variance as a function of the polynome degree</center>
 <center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
 
 If J<sub>cv</sub>(θ) or J<sub>test</sub>(θ) is high. Is it a bias problem (small d) or a variance problem (large d)?:
 
@@ -139,17 +142,97 @@ $$ J_{cv}(\theta)=\frac{1}{2m_{cv}}\sum_{i=1}^{m_{cv}}(h_{\theta}(x_{cv}^{(i)})-
 $$
 J_{test}(\theta)=\frac{1}{2m_{test}}\sum_{i=1}^{m_{test}}(h_{\theta}(x_{test}^{(i)})-y_{test}^{(i)})^{2}$$
 
-
-1. Try λ = 0
-2. Try λ = 0.01 (double λ)
-3. Try λ = 0.02
+Then we try some value of λ:
+* Try λ = 0
+* Try λ = 0.01 (double λ)
+* Try λ = 0.02
 
 ...
-12. Try λ = 10.24
+* Try λ = 10.24 (total 12 tries)
 
 at i<sup>th</sup> try, we minimize J(θ) in order to find θ (perform on the training set). Then we choose one that has lowest J<sub>cv</sub>(*chosen* θ) among 12 tries (perform on cross validation). Finally report how well it does on the test set (by computing J<sub>test</sub>(*chosen* θ)).
 
 **Bias/variance as a function of the regularization parameter λ**
 
+<hr>
 <center><img src="http://i.imgur.com/B50IFz9.png" width="280"/></center>
+<center>Figure 2. Bias/variance as a function of the regularization parameter λ</center>
 <center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+###### **Learning curves**
+
+**Learning curve:** used to sanity check that your algorithm is working correctly, or improve the performance of the algorithm
+
+=> diagnose if a physical learning algorithm may be suffering from bias, or variance problem or a bit of both.
+
+<hr>
+<center><img src="http://i.imgur.com/NmLuhFP.png" width="550"/></center>
+<center>Figure 3. Bias/variance as a function of the polynome degree.</center>
+<center>When m is small, it's pretty easy to fit every single one of the training examples perfectly, so the error will be small.</center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+**Using learning curve to diagnose a high bias problem:**
+
+<hr>
+<center><img src="http://i.imgur.com/GCaPK7C.png" width="350"/></center>
+<center>Figure 4. Learning curve in high bias problem.</center>
+<center>There are so few parameters & so much data (when m is large), the performance on the training set & the cross validation set will be very similar.</center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+Low training set size (small m): causes J<sub>train</sub>(Θ) to be low and J<sub>cv</sub>(Θ) to be high.
+
+Large training set size (large m): causes both J<sub>train</sub>(Θ) and J<sub>cv</sub>(Θ) to be high with J<sub>train</sub>(Θ)≈J</sub>cv</sub>(Θ).
+
+If a learning algorithm is suffering from high bias, getting more training data will not (by itself) help much.
+
+**Using learning curve to diagnose a high variance problem:**
+
+<hr>
+<center><img src="http://i.imgur.com/oFOcGoy.png" width="350"/></center>
+<center>Figure 5. Learning curve in high variance problem.</center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+Low training set size (small m): J<sub>train</sub>(Θ) will be low and J<sub>cv</sub>(Θ) will be high.
+
+Large training set size (large m): J<sub>train</sub>(Θ) increases with training set size and J<sub>cv</sub>(Θ) continues to decrease without leveling off. Also, J<sub>train</sub>(Θ) < J<sub>cv</sub>(Θ) but the difference between them remains significant.
+
+If a learning algorithm is suffering from high variance, getting more training data is likely to help.
+
+###### **Deciding What to Try Next (revisited)**
+
+Suppose you have implemented regularized linear regression to predict housing. However, when you test your hypothesis on a new set of houses, you find that it makes unacceptably large errors in its predictions. What should you try next?
+* Get more training examples <- waste of time.
+  * fixes high variance.
+* Try smaller sets of features.
+  * fixes high variance.
+* Try getting additional features.
+  * fixes high bias.
+* Try adding polynomial features:
+ x<sub>1</sub><sup>2</sup>, x<sub>2</sub><sup>2</sup>, x<sub>1</sub>x<sub>2</sub>, etc.
+  * fixes high bias.
+* Try decreasing λ.
+  * fixes high bias.
+* Try increasing λ.
+  * fixes high variance.
+
+**Apply bias-variance diagnosis to select a neural network architecture**
+
+<hr>
+<center><img src="http://i.imgur.com/ePKC8xW.png" width="500"/></center>
+<center>Figure 6. Neural networks and overfitting.</center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+Usually, using a larger neural network by using regularization to address overfitting is more effective than using a smaller neural network.
+
+Using a single hidden layer is a good starting default. You can train your neural network on a number of hidden layers using your cross validation set. You can then select the one that performs best.
+
+**Model Complexity Effects:**
+
+* Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
+* Higher-order polynomials (high model complexity) fit the training data extremely well and the test data extremely poorly. These have low bias on the training data, but very high variance.
+* In reality, we would want to choose a model somewhere in between, that can generalize well but also fits the data reasonably well. 
