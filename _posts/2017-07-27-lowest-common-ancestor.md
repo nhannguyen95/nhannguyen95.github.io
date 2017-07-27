@@ -9,10 +9,10 @@ comments: 1
 ---
 
 ##### **Bài gốc**
-[Codechef-TALCA](https://www.codechef.com/problems/TALCA)
+[Codechef TALCA](https://www.codechef.com/problems/TALCA)
 
 ##### **Đề bài**
-Cho một cây với n đỉnh và q truy vấn có dạng "u v", cho biết cha chung gần nhất của hai đỉnh u và v, tức là cho biết đỉnh xa gốc nhất là cha của cả u và v.
+Cho một cây có gốc với n đỉnh và q truy vấn có dạng "u v", cho biết cha chung gần nhất của hai đỉnh u và v, tức là cho biết đỉnh xa gốc nhất là cha của cả u và v.
 
 **Giới hạn:**
 
@@ -131,6 +131,48 @@ int main() {
 Độ phức tạp:
 * Để xây dựng mảng f: O(Nlog(N))
 * Cho một truy vấn: O(log(N)) => Cho q truy vấn: O(qlog(N))
+
+##### **Tính chất và ứng dụng**
+* depth[u] là độ sâu/khoảng cách từ u đến gốc (root), có thể tính khoảng cách từ u đến v (có thể vẽ hình để thấy):
+
+{% highlight cpp linenos %}
+int dist(int u, int v) {
+    int l = lca(u, v);
+    return depth[u] + depth[v] - 2 * depth[l];
+}
+{% endhighlight %}
+
+* Để tìm LCA cho một cây không gốc (tức là trả lời cho truy vấn "r u v": cho biết LCA của u và v nếu cây nhận r làm gốc), có thể làm như sau:
+
+  * Chọn một đỉnh bất kì t.
+
+  * Tính LCA(t, u, v), LCA(t, u, r), LCA(t, v, r); trong đó LCA(t, u, v) là lca của u và v khi t là gốc (root). *Như trong đoạn code trên, nếu chọn t = ROOT = 1 thì lca(u, v) = lca(ROOT, u, v) = lca(1, u, v).*
+
+  * Nếu 3 giá trị trên bằng nhau (giả sử là w) thì LCA(r, u, v) = w. Ngược lại nếu có hai giá trị bằng nhau, thì LCA(r, u, v) = giá trị còn lại.
+
+{% highlight cpp linenos %}
+int lca(int r, int u, int v) {
+  int l[3];
+  l[0] = lca(r, u);
+  l[1] = lca(r, v);
+  l[2] = lca(u, v);
+  sort(l, l+3);
+
+  if (l[0] == l[2]) return l[0];
+  return (l[0] == l[1]) ? l[2] : l[0];
+}
+{% endhighlight %}
+
+* LCA(r, u, v) = {r, u, v, LCA(1, u, v), LCA(1, u, r), LCA(1, v, r)}.
+
+* Nếu LCA(r, u, v) là x thì tổng khoảng cách (ngắn nhất) dist(x, r) + dist(x, u) + dist(x, v) là ngắn nhất.
+
+##### **Luyện tập**
+[Codechef TALCA](https://www.codechef.com/problems/TALCA)
+
+[SPOJ LCA](http://www.spoj.com/problems/LCA/)
+
+[Codeforces 832D](http://codeforces.com/contest/832/problem/D)
 
 ##### **Tài liệu tham khảo**
 [1] [Các phương pháp giải bài toán LCA]( http://vnoi.info/wiki/algo/data-structures/lca)
