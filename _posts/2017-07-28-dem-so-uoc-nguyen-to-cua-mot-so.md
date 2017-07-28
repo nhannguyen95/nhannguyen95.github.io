@@ -79,4 +79,6 @@ int main() {
 {% endhighlight %}
 
 ##### **Độ phức tạp**
-Xấp xỉ O(NlogNlogN)
+Độ phức tạp của đoạn sàng: xấp xỉ O(NlogNlogN).
+
+Độ phức tạp tổng quát: O(NlogNlogN + q)
