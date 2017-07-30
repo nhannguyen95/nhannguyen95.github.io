@@ -9,7 +9,7 @@ comments: 1
 ---
 
 ##### **Bài gốc**
-[Codeforces 546D](http://www.spoj.com/KSTN/problems/DS2509/)
+[SPOJ DS2509](http://www.spoj.com/KSTN/problems/DS2509/)
 
 ##### **Đề bài**
 Cho đồ thị vô hướng N đỉnh đánh số từ 1 đến N. Ban đầu tất cả đỉnh đều không có cạnh nối.
