@@ -16,7 +16,7 @@ Cho số nguyên dương n, đếm số cặp số (a, b) sao cho a & b = n.
 
 **Giới hạn:**
 
-* 0 ≤ a,b,n ≤ 2<sup>k</sub>
+* 0 ≤ a,b,n ≤ 2<sup>k</sup>
 * 1 ≤ k ≤ 30
 
 ##### **Định dạng test**
