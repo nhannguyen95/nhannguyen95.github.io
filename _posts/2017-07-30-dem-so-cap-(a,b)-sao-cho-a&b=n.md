@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Đếm số cặp (a, b) sao cho a & b = n"
-date: 2017-07-30 13:31:00 +0700
+date: 2017-07-30 14:34:00 +0700
 categories:
 tags:
 no-post-nav: 0
