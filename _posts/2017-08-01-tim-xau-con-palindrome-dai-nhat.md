@@ -17,7 +17,7 @@ Yêu cầu: tìm một chuỗi con đối xứng dài nhất của một chuỗi
 
 **Giới hạn:**
 
-* 1 ≤ |s| ≤ 2000
+* 1 ≤ | s | ≤ 2000
 
 ##### **Định dạng test**
 **Input:**
