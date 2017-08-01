@@ -3,7 +3,7 @@ layout: post
 title:  "Dãy nghịch thế"
 date: 2017-08-01 17:08:00 +0700
 categories:
-tags: dp palindrome
+tags: bit
 no-post-nav: 0
 comments: 1
 ---
