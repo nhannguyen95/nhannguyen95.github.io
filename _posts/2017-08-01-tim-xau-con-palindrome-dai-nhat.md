@@ -13,11 +13,11 @@ comments: 1
 ##### **Đề bài**
 Một chuỗi được gọi là đối xứng (palindrome) nếu như khi đọc chuỗi này từ phải sang trái cũng thu được chuỗi ban đầu.
 
-Yêu cầu: tìm một chuỗi con đối xứng dài nhất của một chuỗi s cho trước. Chuỗi con là chuỗi thu được khi xóa đi một số ký tự từ chuỗi ban đầu.
+Yêu cầu: tìm một chuỗi con đối xứng dài nhất của một chuỗi s độ dài n cho trước. Chuỗi con là chuỗi thu được khi xóa đi một số ký tự từ chuỗi ban đầu.
 
 **Giới hạn:**
 
-* 1 ≤ | s | ≤ 2000
+* 1 ≤ n ≤ 2000
 
 ##### **Định dạng test**
 **Input:**
