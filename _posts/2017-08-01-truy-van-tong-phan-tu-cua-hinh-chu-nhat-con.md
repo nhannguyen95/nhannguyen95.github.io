@@ -19,7 +19,7 @@ Cho Q truy vấn, mỗi truy vấn là một hình chữ nhật con của hình 
 
 * 1 ≤ n ≤ 1000
 * 1 ≤ a<sub>ij</sub> ≤ 1000
-* 1 ≤ Q ≤ 10<sup>5</sub>
+* 1 ≤ Q ≤ 10<sup>5</sup>
 * 1 ≤ x1 ≤ x2 ≤ n, 1 ≤ y1 ≤ y2 ≤ m
 
 ##### **Định dạng test**
@@ -108,4 +108,4 @@ int main() {
 {% endhighlight %}
 
 ##### **Độ phức tạp**
-O(NlogN)
+O(N<sup>2</sup> + Q)
