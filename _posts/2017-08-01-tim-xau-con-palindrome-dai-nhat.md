@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Truy vấn kiểm tra xâu palindrome"
+title:  "Tìm xâu con palindrome dài nhất"
 date: 2017-08-01 17:08:00 +0700
 categories:
 tags: dp palindrome
