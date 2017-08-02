@@ -11,9 +11,9 @@ comments: 1
 [SPOJ NKMAXSEQ](http://vn.spoj.com/problems/NKMAXSEQ/)
 
 ##### **Đề bài**
-Cho dãy số nguyên a1, a2, …, an.
+Cho dãy số nguyên a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>.
 
-Dãy số ai, ai+1, …, aj với 1 ≤ i ≤ j ≤ n được gọi là dãy con của dãy số đã cho và khi đó, j-i+1 được gọi là độ dài, còn ai+ai+1...+aj được gọi là trọng lượng của dãy con này.
+Dãy số a<sub>i</sub>, a<sub>i+1</sub>, …, a<sub>j</sub> với 1 ≤ i ≤ j ≤ n được gọi là dãy con của dãy số đã cho và khi đó, j-i+1 được gọi là độ dài, còn a<sub>i</sub>+a<sub>i+1</sub>...+a<sub>j</sub> được gọi là trọng lượng của dãy con này.
 
 Yêu cầu: cho số nguyên p, trong số các dãy con của dãy số đã cho có trọng lượng không nhỏ hơn p hãy tìm dãy con có độ dài lớn nhất.
 
@@ -105,3 +105,6 @@ int main() {
 
 ##### **Độ phức tạp**
 O(N)
+
+##### **Tài liệu tham khảo**
+[1] [NKMAXSEQ - Le Van Dai's blogblog]( http://levandai.com/algorithm/spoj/2250-day-con-dai-nhat/)
