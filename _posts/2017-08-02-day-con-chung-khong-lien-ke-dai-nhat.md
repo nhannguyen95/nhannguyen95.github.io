@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dãy con dài nhất có tổng lớn hơn bằng p"
+title:  "Dãy con chung không liền kề dài nhất"
 date: 2017-08-02 22:57:00 +0700
 categories:
 tags: dp
