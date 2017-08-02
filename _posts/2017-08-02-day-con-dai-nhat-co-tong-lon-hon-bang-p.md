@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Truy vấn tổng các phần tử của hình chữ nhật con"
-date: 2017-08-01 20:07:00 +0700
+title:  "Dãy con dài nhất có tổng lớn hơn bằng p"
+date: 2017-08-02 22:13:00 +0700
 categories:
 tags: dp
 no-post-nav: 0
