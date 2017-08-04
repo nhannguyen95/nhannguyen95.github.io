@@ -20,8 +20,8 @@ Yêu cầu: cho số nguyên p, trong số các dãy con của dãy số đã ch
 **Giới hạn:**
 
 * 1 ≤ n ≤ 50000
-* |ai| ≤ 20000
-* |p| ≤ 10<sup>9</sup>
+* -20000 ≤ ai ≤ 20000
+* -10<sup>9</sup> ≤ p ≤ 10<sup>9</sup>
 
 ##### **Định dạng test**
 **Input:**
