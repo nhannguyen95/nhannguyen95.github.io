@@ -45,6 +45,7 @@ Các thuật toán được sắp xếp từ trên xuống dưới theo thứ t�
 * [Lowest Common Ancestor (LCA)](https://nhannguyen95.github.io/2017/07/27/lowest-common-ancestor)
 * [Thuật toán Tarjan tìm thành phần liên thông mạnh](https://nhannguyen95.github.io/2017/08/04/thuat-toan-tarjan-tim-thanh-phan-lien-thong-manh)
 * [Kiểm tra chu trình trong đồ thị có hướng](https://nhannguyen95.github.io/2017/07/21/kiem-tra-chu-trinh-trong-do-thi-co-huong)
+* [Tìm khớp và cầu](https://nhannguyen95.github.io/2017/08/04/tim-khop-va-cau)
 * [Tìm chi phí nhỏ nhất để ngắt kết nối đồ thị](https://nhannguyen95.github.io/2017/07/19/tim-chi-phi-nho-nhat-de-ngat-ket-noi-do-thi)
 
 ###### **Shortest path**
