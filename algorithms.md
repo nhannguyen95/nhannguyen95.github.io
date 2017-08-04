@@ -53,3 +53,4 @@ Các thuật toán được sắp xếp từ trên xuống dưới theo thứ t�
 
 ###### **Minimum Spanning Tree**
 * [Thuật toán Kruskal tìm cây khung nhỏ nhất](https://nhannguyen95.github.io/2017/08/03/cay-khung-nho-nhat)
+* [Tưới nước đồng cỏ](https://nhannguyen95.github.io/2017/08/04/tuoi-nuoc-dong-co)
