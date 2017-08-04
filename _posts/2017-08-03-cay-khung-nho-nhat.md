@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Cây khung nhỏ nhất"
+title:  "Thuật toán Kruskal tìm cây khung nhỏ nhất"
 date: 2017-08-03 20:23:00 +0700
 categories:
 tags: mst
