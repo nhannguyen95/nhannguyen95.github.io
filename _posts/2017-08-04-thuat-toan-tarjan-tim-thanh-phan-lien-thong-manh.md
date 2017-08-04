@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Thuật toán Tarjan tìm thành phần liên thông mạnh"
-date: 2017-08-04 23:13:00 +0700
+date: 2017-08-04 11:13:00 +0700
 categories:
 tags: graph tarjan scc
 no-post-nav: 0
