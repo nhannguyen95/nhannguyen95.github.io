@@ -25,6 +25,7 @@ Các thuật toán được sắp xếp từ trên xuống dưới theo thứ t�
 ##### **Math**
 * [Tổng các ước của một số](https://nhannguyen95.github.io/2017/08/01/tong-cac-uoc-cua-mot-so)
 * [Đếm số cặp (a, b) sao cho a & b = n](https://nhannguyen95.github.io/2017/07/30/dem-so-cap-(a,b)-sao-cho-a&b=n)
+* [Số cách chia N phần tử khác nhau vào K nhóm](https://nhannguyen95.github.io/2017/08/09/so-cach-chia-n-phan-tu-khac-nhau-thanh-k-nhom)
 
 ###### **Prime number**
 * [Đếm số ước nguyên tố của một số](https://nhannguyen95.github.io/2017/07/28/dem-so-uoc-nguyen-to-cua-mot-so)
