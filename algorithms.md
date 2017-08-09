@@ -50,6 +50,7 @@ Các thuật toán được sắp xếp từ trên xuống dưới theo thứ t�
 
 ###### **Shortest path**
 * [Dijkstra](https://nhannguyen95.github.io/2017/07/21/dijkstra)
+* [Floyd](https://nhannguyen95.github.io/2017/08/09/floyd)
 
 ###### **Minimum Spanning Tree**
 * [Thuật toán Kruskal tìm cây khung nhỏ nhất](https://nhannguyen95.github.io/2017/08/03/cay-khung-nho-nhat)
