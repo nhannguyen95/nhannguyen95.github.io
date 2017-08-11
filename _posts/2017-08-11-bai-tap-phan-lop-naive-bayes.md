@@ -33,7 +33,7 @@ Theo [định lý Bayes](https://en.wikipedia.org/wiki/Bayes%27_theorem), ta có
 
 $$ P(H_{i}|A) =\frac{P(A|H_{i})P(H_{i})}{P(A)} ~~~~~ (1)$$
 
-Như vậy để so sánh $$ P(H_{i}|A)$$, ta so sánh phần tử của (1). Theo [xác suất kết hợp](https://en.wikipedia.org/wiki/Joint_probability_distribution), phần tử có thể biến đối thảnh:
+Như vậy để so sánh $$ P(H_{i}|A)$$ , ta so sánh phần tử của (1). Theo [xác suất kết hợp](https://en.wikipedia.org/wiki/Joint_probability_distribution), phần tử có thể biến đối thành:
 
 $$ P(A|H_{i})P(H_{i}) = P(A, H_{i}) ~~ (=P(A \cap H_{i}))$$
 
@@ -59,6 +59,4 @@ Do đó $$ (2)$$ trở thành:
 
 $$ P(A_{1},A_{2},..,A_{k},H_{i}) = P(H_{i})\prod_{i=1}^{k}P(A_{i}|H_{i})$$
 
-Như vậy, thay vì so sánh $$ P(H_{i}|A)$$, chúng ta có thể so sánh
-
-$$ P(H_{i})\prod_{i=1}^{k}P(A_{i}|H_{i})$$.
+Như vậy, thay vì so sánh $$ P(H_{i}|A)$$ , chúng ta có thể so sánh $$ P(H_{i})\prod_{i=1}^{k}P(A_{i}|H_{i})$$
