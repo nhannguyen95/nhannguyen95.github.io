@@ -42,8 +42,8 @@ Entropy(S) = -p_{\oplus}log_{2}p_{\oplus} - p_{\ominus}log_{2}p_{\ominus }
 $$
 
 trong đó:
-* $p_{\oplus}$ là tỷ lệ các mẫu thuộc lớp dương trong S.
-* $p_{\ominus}$ là tỷ lệ các mẫu thuộc lớp âm trong S.
+* $$ p_{\oplus}$$ là tỷ lệ các mẫu thuộc lớp dương trong S.
+* $$ p_{\ominus}$$ là tỷ lệ các mẫu thuộc lớp âm trong S.
 
 Tổng quát, nếu có c lớp trong tập S:
 
