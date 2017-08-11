@@ -3,7 +3,7 @@ layout: post
 title:  "Phân tích một số lẻ thành tổng của tối đa 3 số nguyên tố"
 date: 2017-07-30 20:21:00 +0700
 categories:
-tags: ['math', 'prime-number']
+tags: ['math', 'prime number']
 no-post-nav: 0
 comments: 1
 ---
