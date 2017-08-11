@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bài tập tiền xử lý dữ liệu"
+title:  "Bài tập xây dựng cây quyết định sử dụng thuật toán ID3"
 date: 2017-08-11 17:19:00 +0700
 categories: ['data mining']
 tags:
@@ -52,6 +52,7 @@ Entropy(S) = \sum_{i=1}^{c}-p_{i}log_{2}p_{i}
 $$
 
 Vậy:
+
 $$
 Entropy(S) = Entropy([9+, 5-]) = -\frac{9}{14}log_{2}\frac{9}{14} - \frac{5}{14}log_{2}\frac{5}{14} = 0.94
 $$
@@ -100,8 +101,7 @@ $$
 Thuộc tính `Outlook` có Information Gain cao nhất, chọn nó làm nút gốc.
 
 <hr>
-<center><img src="http://i.imgur.com/LpxYnXd.png"/>
-<br></br>
+<center><img src="http://i.imgur.com/r2LMhyG.png"/>
 </center>
 <center>Hình 1. Cây quyết định hiện tại</center>
 <hr>
