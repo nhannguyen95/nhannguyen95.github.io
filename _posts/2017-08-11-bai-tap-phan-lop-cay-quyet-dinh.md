@@ -103,5 +103,53 @@ Thuộc tính `Outlook` có Information Gain cao nhất, chọn nó làm nút g�
 <hr>
 <center><img src="http://i.imgur.com/r2LMhyG.png"/>
 </center>
-<center>Hình 1. Cây quyết định hiện tại</center>
+<center>Hình 1. Cây quyết định sau khi chọn nút gốc</center>
+<hr>
+
+**Xây dựng tiếp cây quyết định**:
+
+Sau khi chọn được nút gốc là `Outlook`, tiếp theo ta tính tiếp các nút tại mỗi thuộc tính của nút vừa chọn. Trong hình 1:
+* Nhánh bên trái cùng ứng với `Outlook = Sunny`, có S<sub>Sunny</sub> là [2+, 3-], chưa phân lớp hoàn toàn nên vẫn phải tính toán chọn nút tại đây. Tương tự cho nhánh phải cùng.
+* Nhánh ở giữa ứng với `Outlook = Overcast`, tập dữ liệu tại nhánh này đã hoàn toàn phân lớp dương với 4+ và 0-. Tại đây đã có thể quyết định, khi `Outlook = Overcast` thì có thể đi chơi tennis.
+
+Bây giờ ta sẽ thực hiện tính toán với nhánh trái cùng, trên tập S<sub>Sunny</sub> = [2+, 3-].
+
+Hoàn toàn tương tự như cách tìm nút gốc, ta tính Information Gain cho 3 thuộc tính còn lại là `Temp`, `Humidity` và `Wind` (trên tập S<sub>Sunny</sub>).
+
+Xét thuộc tính `Humidity`, có:
+* S<sub>Normal</sub>: [2+, 0-] (nghĩa là tại những dữ liệu có `Outlook = Overcast` và `Humidity = Normal`, có 2 dữ liệu, tất cả đều cho kết quả Yes).
+* S<sub>High</sub>: [0, 3-].
+
+Từ đó:
+
+$$
+Gain(S_{Sunny}, Humidity) = Entropy([2+, 3-]) - \sum_{v\in Value(Humidity)}\frac{|S_{v}|}{5}Entropy(S_{v}) = 0.971
+$$
+
+Tương tự:
+
+$$
+Gain(S_{Sunny}, Temp) = 0.571
+$$
+
+$$
+Gain(S_{Sunny}, Wind) = 0.019
+$$
+
+Nhận thấy thuộc tính `Humidity` có Information Gain cao nhất, chọn thuộc tính này làm nút cho nhánh trái cùng.
+
+<hr>
+<center><img src="http://i.imgur.com/qsqcnUS.png"/>
+</center>
+<center>Hình 2. Cây quyết định sau khi chọn nút cho nhánh trái cùng</center>
+<hr>
+
+**Cây quyết định hoàn chỉnh**:
+
+Làm tương tự cho nút tại nhánh phải ngoài (đến khi tất cả các nút lá của cây đều đã phân lớp), ta được cây quyết định hoàn chỉnh như sau:
+
+<hr>
+<center><img src="http://i.imgur.com/KMEF7z6.png"/>
+</center>
+<center>Hình 3. Cây quyết định hoàn chỉnh</center>
 <hr>
