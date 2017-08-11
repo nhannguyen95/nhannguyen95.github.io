@@ -139,7 +139,7 @@ $$
 Nhận thấy thuộc tính `Humidity` có Information Gain cao nhất, chọn thuộc tính này làm nút cho nhánh trái cùng.
 
 <hr>
-<center><img src="http://i.imgur.com/qsqcnUS.png"/>
+<center><img src="http://i.imgur.com/qsqcnUS.png" width="595"/>
 </center>
 <center>Hình 2. Cây quyết định sau khi chọn nút cho nhánh trái cùng</center>
 <hr>
@@ -149,7 +149,7 @@ Nhận thấy thuộc tính `Humidity` có Information Gain cao nhất, chọn t
 Làm tương tự cho nút tại nhánh phải ngoài (đến khi tất cả các nút lá của cây đều đã phân lớp), ta được cây quyết định hoàn chỉnh như sau:
 
 <hr>
-<center><img src="http://i.imgur.com/KMEF7z6.png"/>
+<center><img src="http://i.imgur.com/KMEF7z6.png" width="595"/>
 </center>
 <center>Hình 3. Cây quyết định hoàn chỉnh</center>
 <hr>
