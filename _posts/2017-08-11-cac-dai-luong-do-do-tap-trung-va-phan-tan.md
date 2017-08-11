@@ -15,7 +15,7 @@ Các đại lượng này kết hợp với đồ thị phân phối tần số 
 
 ##### **Các đại lượng đo độ tập trung**
 
-###### **Trung bình cộng đơn giản (Mean)**:
+###### **Trung bình cộng đơn giản (Mean)**
 
 $$
 \bar{x}=\frac{\sum_{i=1}^{n}x_{i}}{n}
@@ -25,7 +25,7 @@ trong đó:
 * n là cỡ mẫu.
 * x<sub>i</sub> là giá trị quan sát thứ i.
 
-###### **Trung bình cộng có trọng số (Weighted mean)**:
+###### **Trung bình cộng có trọng số (Weighted mean)**
 
 $$
 \bar{X}_{w}=\frac{\sum_{i=1}^{n}w_{i}x_{i}}{\sum_{i=1}^{n}w_{i}}
@@ -35,7 +35,7 @@ trong đó:
 * {x<sub>1</sub>, x<sub>2</sub>,..,x<sub>n</sub>}: tập dữ liệu mẫu.
 * {w<sub>1</sub>, w<sub>2</sub>,..,w<sub>n</sub>}: tập trọng số tương ứng với tập dữ liệu mẫu.
 
-###### **Trung vị (Meadian)**:
+###### **Trung vị (Meadian)**
 
 $$
 Me=
@@ -47,17 +47,17 @@ $$
 
 với tập dữ liệu mẫu {x<sub>1</sub>, x<sub>2</sub>,..,x<sub>n</sub>} đã được sắp xếp.
 
-###### **Yếu vị (Mode)**:
+###### **Yếu vị (Mode)**
 
 Là giá trị được gặp nhiều lần trong tập dữ liệu mẫu.
 
-###### **Trung bình nhân (Geometri mean)**:
+###### **Trung bình nhân (Geometri mean)**
 
 $$
 \bar{x}=\sqrt[n]{x_{1}x_{2}..x_{n}}
 $$
 
-###### **Giá trị trung bình của giá trị lớn nhất và nhỏ nhất trong tập dữ liệu (Midrange)**:
+###### **Giá trị trung bình của giá trị lớn nhất và nhỏ nhất trong tập dữ liệu (Midrange)**
 
 $$
 \frac{x_{max}+x_{min}}{2}
@@ -65,7 +65,7 @@ $$
 
 ##### **Các đại lượng đo độ phân tán**
 
-###### **Phân vị (Percentiles)**:
+###### **Phân vị (Percentiles)**
 
 Công thức xác định phân vị thứ p:
 
@@ -75,13 +75,13 @@ $$
 
 **Phân vị thứ p** (0 < p < 100) trong một dãy tăng dần gồm n phần tử là một giá trị chia dãy số thành 2 phần, một phần gồm p% số quan sát có giá trị nhỏ hơn hoặc bằng giá trị phân vị thứ p.
 
-###### **Khoảng biến thiên (Range)**:
+###### **Khoảng biến thiên (Range)**
 
 $$
 R = x_{max} - x_{min}
 $$
 
-###### **Độ trãi giữa (Interquartile Range)**:
+###### **Độ trãi giữa (Interquartile Range)**
 
 $$
 IRQ = Q_{3} - Q_{1}
@@ -91,7 +91,7 @@ trong đó:
 * Q<sub>1</sub> là phần vị thứ 25
 * Q<sub>3</sub> là phần vị thứ 75
 
-###### **Phương sai (Variance)**:
+###### **Phương sai (Variance)**
 
 $$
 s^{2}=\frac{\sum_{i=1}^{n}(X_{i} - \bar{X})^{2}}{n-1}
@@ -100,7 +100,7 @@ $$
 trong đó:
 * x̄ là trung bình cộng đơn giản.
 
-###### **Độ lệch chuẩn (Standard deviation)**:
+###### **Độ lệch chuẩn (Standard deviation)**
 
 $$
 s=\sqrt{\frac{\sum_{i=1}^{n}(X_{i} - \bar{X})^{2}}{n-1}}
@@ -109,6 +109,6 @@ $$
 trong đó:
 * x̄ là trung bình cộng đơn giản.
 
-###### **Quan sát ngoại lệ (Outliers)**:
+###### **Quan sát ngoại lệ (Outliers)**
 
 Các giá trị thường nằm cách trên Q<sub>3</sub> hay dưới Q<sub>1</sub> một khoảng 1.5IRQ.
