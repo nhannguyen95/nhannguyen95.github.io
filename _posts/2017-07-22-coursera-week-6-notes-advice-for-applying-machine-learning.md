@@ -2,7 +2,7 @@
 layout: post
 title:  "Week 6 notes: Advice for applying machine learning"
 date: 2017-07-22 10:24:00 +0700
-categories: machine-learning
+categories: ['machine learning']
 tags: notes
 no-post-nav: 0
 comments: 1
@@ -235,4 +235,4 @@ Using a single hidden layer is a good starting default. You can train your neura
 
 * Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
 * Higher-order polynomials (high model complexity) fit the training data extremely well and the test data extremely poorly. These have low bias on the training data, but very high variance.
-* In reality, we would want to choose a model somewhere in between, that can generalize well but also fits the data reasonably well. 
+* In reality, we would want to choose a model somewhere in between, that can generalize well but also fits the data reasonably well.
