@@ -53,7 +53,7 @@ Lưu ý:
 
 
 ##### **Math**
-* [Modular multiplicative inverse – Tính nghịch đảo theo modulo] (https://nhannguyen95.wordpress.com/2017/03/16/modular-multiplicative-inverse-tinh-nghich-dao-theo-phep-nhan-modulo/)
+* [Modular multiplicative inverse – Tính nghịch đảo theo modulo](https://nhannguyen95.wordpress.com/2017/03/16/modular-multiplicative-inverse-tinh-nghich-dao-theo-phep-nhan-modulo/)
 * Tìm UCLN, BCNN (GCD, LCM)
 * Phân tích thừa số nguyên tố
 * [Pillai’s arithmetical function](https://nhannguyen95.wordpress.com/2017/02/01/pillais-arithmetical-function-thuat-toan-tinh-ham-pillai/)
