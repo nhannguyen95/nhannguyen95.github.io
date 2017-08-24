@@ -109,7 +109,7 @@ Lưu ý:
 * Tìm Substring chung dài nhất của M xâu trong N xâu cho trước
 
 ##### **Graph**
-* []Định chiều đồ thị](https://nhannguyen95.wordpress.com/2017/04/10/dinh-chieu-do-thi/)
+* [Định chiều đồ thị](https://nhannguyen95.wordpress.com/2017/04/10/dinh-chieu-do-thi/)
 * Flood fill
 * [Topological sort / Topological ordering](https://nhannguyen95.wordpress.com/2017/04/11/tim-thu-tu-topo-trong-dag/)
 * [Đếm số đỉnh trước và sau của một đỉnh trong DAG](https://nhannguyen95.wordpress.com/2016/09/16/count-number-of-predecessors-and-successors-of-each-vertex-in-a-dag/)
