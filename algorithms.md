@@ -21,6 +21,7 @@ Lưu ý:
 ##### **Greedy**
 
 ##### **Dynamic Programming**
+* [Đổi tiền (vô hạn tờ tiền cho mỗi mệnh giá)](http://vn.spoj.com/problems/DTDOI/)
 * [Longest Increasing Subsequence (LIS)](https://nhannguyen95.wordpress.com/2017/02/27/lis-day-con-tang-dai-nhat/)
 * [Truy vấn tổng các phần tử của hình chữ nhật con](https://nhannguyen95.github.io/2017/08/01/truy-van-tong-phan-tu-cua-hinh-chu-nhat-con)
 * [Longest Common Subsequence (LCS)](https://nhannguyen95.github.io/2017/08/02/day-con-chung-khong-lien-ke-dai-nhat)
@@ -59,6 +60,7 @@ Lưu ý:
 * [Pillai’s arithmetical function](https://nhannguyen95.wordpress.com/2017/02/01/pillais-arithmetical-function-thuat-toan-tinh-ham-pillai/)
 * [Euler’s totient function](https://nhannguyen95.wordpress.com/2017/02/01/978/)
 * [Tổng các ước của một số](https://nhannguyen95.github.io/2017/08/01/tong-cac-uoc-cua-mot-so)
+* [Tìm số nguyên dương nhỏ nhất có đúng N ước](http://vn.spoj.com/problems/FINDNUM/)
 * [Đếm số cặp (a, b) sao cho a & b = n](https://nhannguyen95.github.io/2017/07/30/dem-so-cap-(a,b)-sao-cho-a&b=n)
 * [Số cách chia N phần tử khác nhau vào K nhóm](https://nhannguyen95.github.io/2017/08/09/so-cach-chia-n-phan-tu-khac-nhau-thanh-k-nhom)
 
@@ -82,6 +84,9 @@ Lưu ý:
 
 ###### **Stack**
 * Tìm đoạn dài nhất chứa A[i], sao cho A[i] nhỏ nhất
+* [Đếm cặp](http://vn.spoj.com/problems/C11PAIRS/)
+* [Đếm hình chữ nhật trên bảng 01](http://vn.spoj.com/problems/CREC01/)
+* [Tìm nghiệm đa thức](http://vn.spoj.com/problems/CRUELL2/)
 
 ###### **Deque**
 * Window sliding
@@ -125,6 +130,7 @@ Lưu ý:
 
 ###### **Shortest path**
 * [Dijkstra](https://nhannguyen95.github.io/2017/07/21/dijkstra)
+* [Đếm số đường đi ngắn nhất từ s đến t](http://vn.spoj.com/problems/CENTRE28/)
 * [Floyd](https://nhannguyen95.github.io/2017/08/09/floyd)
 
 ###### **Minimum Spanning Tree**
