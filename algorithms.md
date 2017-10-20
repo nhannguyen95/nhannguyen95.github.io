@@ -24,7 +24,7 @@ Lưu ý:
 * [Đổi tiền (vô hạn tờ tiền cho mỗi mệnh giá)](http://vn.spoj.com/problems/DTDOI/)
 * [Longest Increasing Subsequence (LIS)](https://nhannguyen95.wordpress.com/2017/02/27/lis-day-con-tang-dai-nhat/)
 * [Truy vấn tổng các phần tử của hình chữ nhật con](https://nhannguyen95.github.io/2017/08/01/truy-van-tong-phan-tu-cua-hinh-chu-nhat-con)
-* [Longest Common Subsequence (LCS)](https://nhannguyen95.github.io/2017/08/02/day-con-chung-khong-lien-ke-dai-nhat)
+* [Dãy con chung không liền kề dài nhất](https://nhannguyen95.github.io/2017/08/02/day-con-chung-khong-lien-ke-dai-nhat)
 * Knapsack DP
 * Partial Sum
 * [Jay Kadane algorithm (used to solve MRS)](https://nhannguyen95.wordpress.com/2017/03/23/day-con-lien-tiep-co-tong-lon-nhat/)
