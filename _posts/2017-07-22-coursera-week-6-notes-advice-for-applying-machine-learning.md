@@ -236,3 +236,105 @@ Using a single hidden layer is a good starting default. You can train your neura
 * Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
 * Higher-order polynomials (high model complexity) fit the training data extremely well and the test data extremely poorly. These have low bias on the training data, but very high variance.
 * In reality, we would want to choose a model somewhere in between, that can generalize well but also fits the data reasonably well.
+
+##### **Building a Spam Classifier**
+
+###### **Prioritizing What to Work On**
+
+Supervised learning: `x` = features of email, `y` = spam (1) or not spam (0).
+
+Features x: Choose 100 words indicative of spam/not spam. Represent it under a 0/1 vector (word appears in the email or not).
+
+How to spend your time to make it have low error?
+* Collect lots of data (for example "honeypot" project but doesn't always work).
+* Develop sophisticated features based on email routing information (from email header).
+* Develop sophisticated features for message body, e.g. should "discount" and "discounts" be treated as the same word? How about "deal" and "Dealer"? Features about punctuation?
+* Develop sophisticated algorithm to detect misspellings.
+
+It is difficult to tell which of the options will be most helpful.
+
+###### **Error Analysis**
+
+Recommended approach:
+* Start with a simple algorithm that you can implement quickly. Implement it and test it on your cross-validation data.
+* Plot learning curves to decide if more data, more features, etc. are likely to help.
+* Error analysis: Manually examine the examples (in cross validation set) that your algorithm made errors on. See if you spot any systematic trend in what type of examples it is making errors on.
+
+Stemming software.
+
+Look for the improvement in your cross-validation data set.
+
+##### **Handling Skewed Data**
+
+###### **Error Metrics for Skewed Classes**
+
+**Skewed Classes**: We have a lot more of examples from one class than from the other class.
+
+If we have very skewed classes, it becomes much harder to use just classification accuracy, because you can get very high classification accuracies (or very low errors) by predicting 0/1 all the times. And it's not always clear if doing so is really improving the quality of your classifier.
+
+**Precision/Recall**
+
+y = 1 in presence of rare class that we want to detect.
+
+<hr>
+<center><img src="http://i.imgur.com/CVFbCFp.png"/></center>
+<center>Figure 7. 2x2 table comparing ground truth to describe the performance of a model.</center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+**Precision**: (Of all patients where we predicted y = 1, what fraction actually has cancer?) $$ \frac{True positive}{True positive + False positive}$$.
+
+
+**Recall**: (Of all patients that actually have cancer, what fraction did we correctly detect as having cancer) $$ \frac{True positive}{True positive + False negative}$$.
+
+(**Accuracy**: $$ \frac{true positive + true negative}{total examples}$$)
+
+The higher precision/recall, the better.
+
+In a non-learning algorithm (predict 0 all the times), we will have recall = 0.
+
+###### **Trading Off Precision and Recall**
+
+Logistic regression: $$ 0 \leq h_{\theta}(x) \leq 1$$.
+
+Predict 1 if $$ h_{\theta}(x) \geq threshold$$.
+
+Predict 0 if $$ h_{\theta}(x) < threshold$$.
+
+Suppose we want to predict y = 1 (cancer) only if very confident (high threshold).
+
+**The higher threshold, the higher precision and the lower recall**.
+
+Suppose we want to avoid missing too many cases of cancer (avoid false negatives).
+
+**The lower threshold, the lower precision and the higher recall**.
+
+<hr>
+<center><img src="http://i.imgur.com/JSHFLQ8.png"/></center>
+<center>Figure 8. The relation between threshold, precision and recall.</center>
+<center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
+<hr>
+
+Is there a way to choose threshold automatically?
+
+**F<sub>1</sub> Score (F score)**
+
+How to compare precision/recall numbers?
+
+$$ F_{1} Score = 2\frac{PR}{P+R}$$
+
+||Precision P|Recall R|F Score|
+|-|-|-|-|
+|Algorithm1|0.5|0.4|0.444|
+|Algorithm2|0.7|0.1|0.175|
+|Algorithm3|0.02|1.0|0.0392|
+
+Measure the figures from cross-validation data set.
+
+##### **Using Large Data Sets**
+
+###### **Data For Machine Learning**
+
+Suppose a massive dataset is available for training a learning algorithm. Training on a lot of data is likely to give good performance when two of the following conditions hold true:
+* The features x contain sufficient information to predict y accurately. (For example, one way to verify this is if a human expert on the domain can confidently predict y when given only x).
+* We train a learning algorithm with a large number of parameters (that is able to learn/represent fairly complex functions).
