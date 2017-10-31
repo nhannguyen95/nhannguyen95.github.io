@@ -60,7 +60,7 @@ In Stochastic Gradient Descent, the vector θ is updated after each example, it'
 Stochastic Gradient Descent generally move the parameters in the direction of the global minimum, but not always. And in fact it doesn't actually converge in the same sense as Batch Gradient Descent does:
 
 <hr>
-<center><img src="https://i.imgur.com/qXv58Fa.png"/></center>
+<center><img width="600" src="https://i.imgur.com/qXv58Fa.png"/></center>
 <center>Figure 1. The difference between BGD and SGD</center>
 <center><i><a href="https://wikidocs.net/3413">Source: Wikidocs.net</a></i></center>
 <hr>
@@ -117,7 +117,7 @@ In Stochastic Gradient Descent:
 Suppose you have plotted the cost average over the last 1000 examples, because these are averaged over just a 1000 examples, they are going to a little bit noisy and so, it may not decrease on every single iteration.
 
 <hr>
-<center><img src="https://i.imgur.com/bVWTSWL.png"/></center>
+<center><img width="600" src="https://i.imgur.com/bVWTSWL.png"/></center>
 <center>Figure 2. Different scenarios of cost function J</center>
 <center><i><a href="https://www.coursera.org/learn/machine-learning">Source: Coursera Machine Learning course</a></i></center>
 <hr>
