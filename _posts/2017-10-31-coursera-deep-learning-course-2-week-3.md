@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  "Coursera Deep Learning Course 2 Week 3 notes:
-Hyperparameter tuning, Batch Normalization and Programming Frameworks"
+title:  "Coursera Deep Learning Course 2 Week 3 notes: Hyperparameter tuning, Batch Normalization and Programming Frameworks"
 date: 2017-10-31 20:27:00 +0700
 categories: ['machine learning', 'deep learning']
 tags: notes
@@ -221,11 +220,11 @@ Softmax regression generalizes logistic regression to C classes. If C = 2, softm
 
 **Lost function**
 
-$$ $$ \it\unicode{xA3}(\hat{y}, y) = -\sum_{j=1}^{C}y_{j}log\hat{y}_{j}$$
+$$ \it\unicode{xA3}(\hat{y}, y) = -\sum_{j=1}^{C}y_{j}log\hat{y}_{j}$$
 
 **Cost function**
 
-$$ J(W, b) = \frac{1}{m}\sum_{i=1}^{m}\it\unicode{xA3}(\hat{y}^{(i)}, y^{(i)})
+$$ J(W, b) = \frac{1}{m}\sum_{i=1}^{m}\it\unicode{xA3}(\hat{y}^{(i)}, y^{(i)})$$
 
 The dimension of $$ \hat{y}, y$$ is `(C, m)` (stack the input horizontally).
 
