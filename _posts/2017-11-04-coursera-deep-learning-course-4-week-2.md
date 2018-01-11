@@ -1,16 +1,20 @@
 ---
 layout: post
-title:  "Coursera Deep Learning Course 4 Week 2 notes: Deep convolutional models: case studies"
+title:  "Week 2 - Deep convolutional models: case studies"
 date: 2018-01-04 13:34:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
-no-post-nav: 0
-comments: 1
+# categories: ['machine learning', 'deep learning']
+tags:
+  - Coursera Deep Learning Course 4 - Convolutional Neural Networks notes
+comments: true
+mathjax: true
+content_level: 3
 ---
 
-##### **Case studies**
+<a name="-case-studies"></a>
+## **Case studies**
 
-###### **Why look at case studies?**
+<a name="-why"></a>
+### **Why look at case studies?**
 
 Some classic networks:
 * LeNet-5
@@ -23,17 +27,18 @@ The idea of these might be useful for your own work.
 
 * Inception neural network
 
-###### **Classic Networks**
+<a name="-classic-networks"></a>
+### **Classic Networks**
 
-**LeNet - 5**
+<a name="-lenet-5"></a>
+#### **LeNet - 5**
 
-<hr>
-<center><a href="https://i.imgur.com/Uz9jML4.png" target="_blank">
-<img width="600" src="https://i.imgur.com/Uz9jML4.png"/></a>
-</center><center>Figure 1. LeNet - 5 network architecture.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/Uz9jML4.png"
+  cap="Figure 1. LeNet - 5 network architecture."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Goal: recognize hand-written digits.
 
@@ -52,15 +57,14 @@ Original LeNet - 5 paper reading note:
 * There was non-linearity after pooling.
 * Should focus on section 2 & 3.
 
-**AlexNet**
+#### **AlexNet**
 
-<hr>
-<center><a href="https://i.imgur.com/ucPEwqk.png" target="_blank">
-<img width="600" src="https://i.imgur.com/ucPEwqk.png"/></a>
-</center><center>Figure 2. AlexNet network architecture.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/ucPEwqk.png"
+  cap="Figure 2. AlexNet network architecture."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Has a lot of similarity to LeNet - 5, but much bigger.
 
@@ -73,29 +77,28 @@ AlexNet paper reading nots:
 * When the paper was written, GPUs slow: using multiple GPUs.
 * There was another set of a layer: Local Response Normalization: normalize (i, j, :) - not used much today.
 
-**VGG - 16**
+#### **VGG - 16**
 
 To avoid having too many hyperparameters:
 * All CONV = 3x3 filter, s = 1, same padding.
 * All MAX-POOL = 2x2, s = 2.
 
-<hr>
-<center><a href="https://i.imgur.com/QIe13FP.png" target="_blank">
-<img width="600" src="https://i.imgur.com/QIe13FP.png"/></a>
-</center><center>Figure 3. VGG - 16 network architecture.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/QIe13FP.png"
+  cap="Figure 3. VGG - 16 network architecture."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Downside: a large network to train - 138M parameters.
 
 16 layers that have weights.
 
-**VGG - 19**
+#### **VGG - 19**
 
 A bigger version of VGG - 16.
 
-###### **ResNets (Residual Network)**
+### **ResNets (Residual Network)**
 
 Very deep networks are difficult to train because of vanishing and exploding gradient types of problems.
 
@@ -103,23 +106,22 @@ ResNet enables you to train very deep networks.
 
 _Read more in this week's Residual Network assignment._
 
-**Residual block**
+#### **Residual block**
 
 _Read more in this week's Residual Network assignment._
 
-###### **Why ResNets Work**
+### **Why ResNets Work**
 
 Taking notes later..
 
-###### **Networks in Networks and 1x1 Convolutions**
+### **Networks in Networks and 1x1 Convolutions**
 
-<hr>
-<center><a href="https://i.imgur.com/QIe13FP.png" target="_blank">
-<img width="600" src="https://i.imgur.com/QIe13FP.png"/></a>
-</center><center>Figure 4. 1x1 convolutions with 1-channel volumn and multi-channel volumn.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/7ioqzYt.png"
+  cap="Figure 4. 1x1 convolutions with 1-channel volumn and multi-channel volumn."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 With 1-channel volumn: 1x1 convolutions is simply just multiplying a matrix with a scalar.
 
@@ -131,19 +133,18 @@ That's the reason why 1x1 convolutions are also called **Network in Network**.
 
 Although the idea of 1x1 convolutions wasn't used widely, it influenced many other neural network architectures.
 
-**Using 1x1 convolutions**
+#### **Using 1x1 convolutions**
 
 When number of channels is too big, you can shrink that using some CONV 1x1 filters.
 
-###### **Inception Network Motivation**
+### **Inception Network Motivation**
 
-<hr>
-<center><a href="https://i.imgur.com/cis8tEh.png" target="_blank">
-<img width="600" src="https://i.imgur.com/cis8tEh.png"/></a>
-</center><center>Figure 5. One inception module inputs 28x28x192 and outputs 28x28x256.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/cis8tEh.png"
+  cap="Figure 5. One inception module inputs 28x28x192 and outputs 28x28x256."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Idea: Instead of picking what filter/pooling to use, just do them all, and concat all the output.
 
@@ -151,70 +152,66 @@ Problem with inception layer: computational cost, for example to compute the out
 
 To reduce (by a factor of 10): use 1x1 convolutions.
 
-**Using 1x1 comvolution**
+#### **Using 1x1 convolution**
 
-<hr>
-<center><a href="https://i.imgur.com/JKw79YE.png" target="_blank">
-<img width="600" src="https://i.imgur.com/JKw79YE.png"/></a>
-</center><center>Figure 6. Use a 1x1 convolution (bottle neck) layer to reduce/shrink the number of channel first.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/JKw79YE.png"
+  cap="Figure 6. Use a 1x1 convolution (bottle neck) layer to reduce/shrink the number of channel first."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 The cost now = `28x28x16 x 1x1x192 + 28x28x32 x 5x5x32 = 12M`
 
 Question: Does shrinking down the number of channel dramatically hurt the performance? - It doesn't seem to hurt.
 
-###### **Inception Network**
+### **Inception Network**
 
-<hr>
-<center><a href="https://i.imgur.com/qhPZfZQ.png" target="_blank">
-<img width="600" src="https://i.imgur.com/qhPZfZQ.png"/></a>
-</center><center>Figure 7. One Inception module.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/qhPZfZQ.png"
+  cap="Figure 7. One Inception module."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-<center><a href="https://i.imgur.com/QCvVQxo.png" target="_blank">
-<img width="600" src="https://i.imgur.com/QCvVQxo.png"/></a>
-</center><center>Figure 8. An Inception network.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/QCvVQxo.png"
+  cap="Figure 8. An Inception network."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-##### **Practical advices for using ConvNets**
+## **Practical advices for using ConvNets**
 
-###### **Using Open-Source Implementation**
+### **Using Open-Source Implementation**
 
 No notes.
 
-###### **Transfer learning**
+### **Transfer learning**
 
-**Your training set is small**
+#### **Your training set is small**
 
-<hr>
-<center><a href="https://i.imgur.com/yXRM4yc.png" target="_blank">
-<img width="600" src="https://i.imgur.com/yXRM4yc.png"/></a>
-</center><center>Figure 10. Transfer Learning with small traning set (just change the softmax layer).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/yXRM4yc.png"
+  cap="Figure 9. Transfer Learning with small traning set (just change the softmax layer)."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-**Your training set is large**
+#### **Your training set is large**
 
-<hr>
-<center><a href="https://i.imgur.com/SXo7qXx.png" target="_blank">
-<img width="600" src="https://i.imgur.com/SXo7qXx.png"/></a>
-</center><center>Figure 11. With large traning set: freeze a few layer, train the rest (or use your own neural network).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/SXo7qXx.png"
+  cap="Figure 10. With large traning set: freeze a few layer, train the rest (or use your own neural network)."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-**Your training set is very large**
+#### **Your training set is very large**
 
 Use the trained weights as initialization.
 
-###### **Data Augmentation**
+### **Data Augmentation**
 
 Common augmentation method:
 * Mirroring
@@ -224,25 +221,23 @@ Common augmentation method:
 * Local warping
 * Color shifting: PCA (Principles Component Analysis) Color Augmentation algorithm.
 
-Implementing distortions during training
+Implementing distortions during training:
 
-<hr>
-<center><a href="https://i.imgur.com/ZEQiqeP.png" target="_blank">
-<img width="600" src="https://i.imgur.com/ZEQiqeP.png"/></a>
-</center><center>Figure 12. Using threads to distort data and some other threads to train (maybe in parallel).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/ZEQiqeP.png"
+  cap="Figure 11. Using threads to distort data and some other threads to train (maybe in parallel)."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-###### **State of Computer Vision**
+### **State of Computer Vision**
 
-<hr>
-<center><a href="https://i.imgur.com/dmLHBA9.png" target="_blank">
-<img width="600" src="https://i.imgur.com/dmLHBA9.png"/></a>
-</center><center>Figure 13. Data vs. hand-engineering.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/dmLHBA9.png"
+  cap="Figure 12. Data vs. hand-engineering."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Machine Learning problems have two sources of knowledge:
 * Labeled data.
@@ -252,7 +247,7 @@ In computer vision, because of the absence of more data, need to focus on (compl
 
 When you don't have enough data, hand-engineering is a very difficult, very skillful task that requires a lot of insight.
 
-**Tips for doing well on benchmarks/winning competitions**
+#### **Tips for doing well on benchmarks/winning competitions**
 (_Rarely used in real production/products/services to serve customers._)
 
 * Ensembling:
@@ -260,7 +255,7 @@ When you don't have enough data, hand-engineering is a very difficult, very skil
 * Multi-crop at test time:
   * Run classifier on multiple versions of test images and average results. (10-crop algorithm)
 
-**Use open source code**
+#### **Use open source code**
 
 * Use architectures of networks published in the literature.
 
