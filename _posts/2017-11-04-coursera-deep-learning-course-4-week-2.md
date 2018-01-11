@@ -101,9 +101,11 @@ Very deep networks are difficult to train because of vanishing and exploding gra
 
 ResNet enables you to train very deep networks.
 
+_Read more in this week's Residual Network assignment._
+
 **Residual block**
 
-Taking notes later..
+_Read more in this week's Residual Network assignment._
 
 ###### **Why ResNets Work**
 
