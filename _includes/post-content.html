@@ -1,0 +1,46 @@
+<div id="content-list">
+  <p>
+    <strong>Content:</strong>
+  </p>
+</div>
+<div class="entry">
+
+
+<script>
+  $(document).ready(function() {
+
+    function generateContentList(parent, level, appendPath) {
+      if (level == {{ include.contentLevel }} + 1)
+        return;
+
+      // Find all header at this level
+      var headers;
+      if (level == 2) {
+        headers = parent.find('h2');
+      } else {
+        headers = parent.nextUntil('h' + (level - 1), 'h' + level);
+      }
+
+      // Base case: no header found at this level
+      if (headers.length == 0) return;
+
+      $(appendPath).append(" <ul id=\"ul_item" + level + "\">");
+      var insideUl = appendPath + " #ul_item" + level;
+
+      $.each(headers, function(index, value) {
+        var header = $(value);
+
+        $(insideUl).append("<li id=\"li_item" + index + "\"><a href=\"#" + header.attr('id') + "\">" + header.text() +"</a>");
+        generateContentList(header, level + 1, insideUl + " #li_item" + index);
+        $(insideUl).append("</li>");
+      });
+
+      $(appendPath).append("</ul>");
+    }
+
+    var post = $('.post');
+    var level = 2;
+    var appendPath = "#content-list";
+    generateContentList(post, level, appendPath);
+  });
+</script>
