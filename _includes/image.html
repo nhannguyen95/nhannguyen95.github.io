@@ -1,0 +1,17 @@
+<hr />
+<div class="imgcap">
+
+  <a href="{{ include.url }}" target="_blank">
+    <img src="{{ include.url }}" class="center-image">
+  </a>
+
+  {% if include.cap %}
+  <div class="thecap">
+    {{ include.cap }}
+    <br />
+    (Source: <a href="{{ include.src_url }}" target="_blank">{{ include.src_cap }}</a>)
+  </div>
+  {% endif %}
+
+</div>
+<hr />
