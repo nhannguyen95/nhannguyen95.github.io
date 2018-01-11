@@ -45,11 +45,14 @@ h1, h2, h3, h5 {
   font-weight: bold;
 }
 
-h1 {
-  font-size: 30px;
+h1, h2 {
   a {
     color: inherit;
   }
+}
+
+h1 {
+  font-size: 30px;
 }
 
 h2 {
@@ -594,3 +597,14 @@ footer {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
+
+.imgcap {
+  color: #555;
+  font-size: 14px;
+  text-align: center;
+}
+
+.thecap {
+  text-align: center;
+  font-size: 14px;
+}
