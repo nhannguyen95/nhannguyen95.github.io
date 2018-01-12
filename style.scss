@@ -45,7 +45,7 @@ h1, h2, h3, h5 {
   font-weight: bold;
 }
 
-h1, h2 {
+h1, h2, h3 {
   a {
     color: inherit;
   }
@@ -107,7 +107,7 @@ sup {
 hr {
   border: 0;
   border-top: 1px solid $divider-color;
-  margin: 1.5em auto;
+  margin: 1em auto;
 }
 
 // Yeun's list style
@@ -315,7 +315,7 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .masthead {
@@ -403,8 +403,10 @@ nav {
 
 // Posts
 .posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $divider-color;
+  // padding-top: 1em;
+  // padding-bottom: 1em;
+  padding: 4% 2%;
+  // border-bottom: 1px solid $divider-color;
 }
 
 .posts > .post:last-child {
@@ -442,7 +444,7 @@ nav {
         padding: .5px 4px;
         color: $tag-index-label-color;
         background-color: $tag-index-label-background-color;
-        border-radius: 3px;
+        // border-radius: 3px;
       }
     }
   }
@@ -607,4 +609,33 @@ footer {
 .thecap {
   text-align: center;
   font-size: 14px;
+}
+
+.posts .post-link {
+  font-size: 22px;
+  text-align: left;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: inherit;
+}
+
+.entry {
+  font-size: 16px;
+}
+
+.hover-post:hover {
+  background-color: #f1f3f5;
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+#share-box {
+  margin-top: 8px;
+
+  .fa {
+    margin-right: 15px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
