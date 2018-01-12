@@ -5,7 +5,11 @@
     {% include nav.html %}
 
     <div id="main" role="main" class="container">
-      {{ content }}
+      <div class="row">
+        <div class="col-xs-12" style = "z-index: 1">
+          {{ content }}
+        </div>
+      </div>
     </div>
 
     <div class="wrapper-footer">
