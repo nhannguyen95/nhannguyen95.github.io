@@ -29,8 +29,11 @@ layout: default
 
   <hr style="margin: 0 auto;"/>
 
+  {% if page.content_level %}
   {% include post-content.html contentLevel = page.content_level %}
-  </div>
+  {% endif %}
+
+  <div>
     {{ content }}
   </div>
 
