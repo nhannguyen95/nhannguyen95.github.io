@@ -8,7 +8,7 @@ tags:
 comments: true
 mathjax: true
 content_level: 3
-img: /images/cnn/residual-net-paper.png
+img: https://i.imgur.com/FTRdSGy.png
 summary: Convolutional Neural Networks notes
 ---
 
