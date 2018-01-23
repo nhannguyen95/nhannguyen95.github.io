@@ -1,16 +1,20 @@
 ---
 layout: post
-title:  "Coursera Deep Learning Course 4 Week 1 notes: Foundations of Convolutional Neural Networks"
+title:  "Week 1 - Foundations of Convolutional Neural Networks"
 date: 2017-11-04 10:52:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
-no-post-nav: 0
-comments: 1
+# categories: ['machine learning', 'deep learning']
+tags:
+  - Coursera Deep Learning Course 4 - Convolutional Neural Networks notes
+comments: true
+mathjax: true
+content_level: 3
+img: /images/cnn/residual-net-paper.png
+summary: Convolutional Neural Networks notes
 ---
 
-##### **Convolutional Neural Networks**
+## **Convolutional Neural Networks**
 
-###### **Computer Vision**
+### **Computer Vision**
 
 Some computer vision problems:
 * Image Classification
@@ -19,15 +23,14 @@ Some computer vision problems:
 
 One of the challenges of computer vision is that the inputs can get really big.
 
-###### **Edge Detection Example**
+### **Edge Detection Example**
 
-<hr>
-<center><a href="https://i.imgur.com/8FhElAp.png" target="_blank">
-<img width="600" src="https://i.imgur.com/8FhElAp.png"/></a>
-</center><center>Figure 1. Vertical Edge Detection.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/8FhElAp.png"
+  cap="Figure 1. Vertical Edge Detection."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Input image * filter = output image (which shows us the vertical edges).
 
@@ -38,7 +41,7 @@ Intuition of filter:
 * Middle column = 0: we don't really care what is in between.
 * Right column = -1: darker area.
 
-###### **More Edge Detection**
+### **More Edge Detection**
 
 3 by 3 horizontal edge detection filter:
 
@@ -70,7 +73,7 @@ And the goal is to learn those 9 parameters, so that when you take the input ima
 
 Rather than vertical and horizontal edges, maybe it can learn to detect edges that are at 45 degrees, or whatever orientation it chooses.
 
-###### **Padding**
+### **Padding**
 
 If we have an nxn image and to involve that with an fxf filter, then the dimension of the output will be (n - f + 1) x (n - f + 1).
 
@@ -88,21 +91,20 @@ Solution: you can pad the input image:
 
 By convention, in computer vision, f is usually odd.
 
-###### **Strided convolution**
+### **Strided convolution**
 
 If you have nxn image, then you convolve with an fxf filter, and if you use padding p and stride s, then you end up with an output that is **floor((n + 2p - f) / s + 1) x floor((n + 2p - f) / s + 1)**.
 
 **Cross-correlation**: Some math text book flips/mirrors the filter before convolving, doing so causes convolution operator to have associativity property: `(A * B) * C = A * (B * C)`, and it's useful in some signal processing applications. For deep neural network, it really doesn't matter.
 
-###### **Convolutions Over Volume**
+### **Convolutions Over Volume**
 
-<hr>
-<center><a href="https://i.imgur.com/YJOMijb.png" target="_blank">
-<img width="600" src="https://i.imgur.com/YJOMijb.png"/></a>
-</center><center>Figure 2. Convolution on RGB image.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/YJOMijb.png"
+  cap="Figure 2. Convolution on RGB image."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Input image: _height_ x _width_ x _#channels_.
 
@@ -116,51 +118,49 @@ What if you don't only want to detect vertical edges, but also horizontal edges 
 
 The answer is you should have multiple filters, each filter is convolved with the input image to result corresponding (4x4) matrices. These matrices will be stacked into a volume whose dimension is of `4 x 4 x number_of_filter`.
 
-###### **One Layer of a Convolutional Network**
+### **One Layer of a Convolutional Network**
 
-<hr>
-<center><a href="https://i.imgur.com/GyV3Bt3.png" target="_blank">
-<img width="600" src="https://i.imgur.com/GyV3Bt3.png"/></a>
-</center><center>Figure 3. The analogy between one layer of Convolutional Network and Neural Network.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/GyV3Bt3.png"
+  cap="Figure 3. The analogy between one layer of Convolutional Network and Neural Network."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 **Summary of notation**
 
 If layer l is a convolutional layer:
 
-f<sup>[l]</sup> = filter size.
+$f^{[l]} = \text{filter size}$
 
-p<sup>[l]</sup> = padding.
+$p^{[l]} = \text{padding}$
 
-s<sup>[l]</sup> = stride.
+$s^{[l]} = \text{stride}$
 
-n<sub>c</sub><sup>[l]</sup> = number of filters (if l = 0, it's the number of channels of input image).
+$n_{c}^{[l]} = \text{number of filters (if l = 0, it's the number of channels of input image)}$
 
-Each filter is of f<sup>[l]</sup> x f<sup>[l]</sup> x n<sub>c</sub><sup>[l - 1]</sup>.
+Each filter is of $f^{[l]} \times f^{[l]} \times n_{c}^{[l - 1]}$
 
-Weights W is of f<sup>[l]</sup> x f<sup>[l]</sup> x n<sub>c</sub><sup>[l - 1]</sup> x n<sub>c</sub><sup>[l]</sup>.
+Weights W is of $f^{[l]} \times f^{[l]} \times n_{c}^{[l - 1]} \times n_{c}^{[l]}$
 
-Bias (for each W) is of n<sub>c</sub><sup>[l]</sup>.
+Bias (for each W) is of $n_{c}^{[l]}$
 
-Input activations a<sup>[l - 1]</sup> is of: n<sub>H</sub><sup>[l - 1]</sup> x n<sub>W</sub><sup>[l - 1]</sup> x n<sub>c</sub><sup>[l - 1]</sup>.
+Input activations $a^{[l - 1]}$ is of $n_{H}^{[l - 1]} \times n_{W}^{[l - 1]} \times n_{c}^{[l - 1]}$
 
-Output Activations a<sup>[l]</sup> is of:  n<sub>H</sub><sup>[l]</sup> x n<sub>W</sub><sup>[l]</sup> x n<sub>c</sub><sup>[l]</sup>.
+Output Activations $a^{[l]}$ is of: $n_{H}^{[l]} \times n_{W}^{[l]} \times n_{c}^{[l]}$
 
 If you're using batch gradient descent:
 
-Output Activations: A<sup>[l]</sup> is m x n<sub>H</sub><sup>[l]</sup> x n<sub>W</sub><sup>[l]</sup> x n<sub>c</sub><sup>[l]</sup>.
+Output Activations: $A^{[l]}$ is $m \times n_{H}^{[l]} \times n_{W}^{[l]} \times n_{c}^{[l]}$
 
-###### **Simple Convolutional Network Example**
+### **Simple Convolutional Network Example**
 
-<hr>
-<center><a href="https://i.imgur.com/0p4RywB.png" target="_blank">
-<img width="600" src="https://i.imgur.com/0p4RywB.png"/></a>
-</center><center>Figure 4. Example of ConvNet.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/0p4RywB.png"
+  cap="Figure 4. Example of ConvNet."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 **Types of layer in a convolutional network:**
 * Convolution (CONV)
@@ -169,22 +169,21 @@ Output Activations: A<sup>[l]</sup> is m x n<sub>H</sub><sup>[l]</sup> x n<sub>W
 
 Although it's possible to design a good neural network using just CONV layer, most neural network architectures also have a few POOL layers and FC layers.   
 
-###### **Pooling layers**
+### **Pooling layers**
 
-<hr>
-<center><a href="https://i.imgur.com/8o9pR20.png" target="_blank">
-<img width="600" src="https://i.imgur.com/8o9pR20.png"/></a>
-</center><center>Figure 5. Max Pooling with filter f = 2 and stride s = 2.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/8o9pR20.png"
+  cap="Figure 5. Max Pooling with filter f = 2 and stride s = 2."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-<center><a href="https://i.imgur.com/Fbj68J3.png" target="_blank">
-<img width="600" src="https://i.imgur.com/Fbj68J3.png"/></a>
-</center><center>Figure 6. Average Pooling with filter f = 2 and stride s = 2.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/Fbj68J3.png"
+  cap="Figure 6. Average Pooling with filter f = 2 and stride s = 2."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 In case input has many channels, just take the pooling on each separating channel (output and input have the same number of channel).
 
@@ -196,19 +195,18 @@ Hyperparameters: (no parameters to learn)
 
 Note: Pooling has no parameters to learn.
 
-###### **CNN Example**
+### **CNN Example**
 
 There are 2 conventions about layer:
 * Treat Convolutional layer and Pooling layer as 2 separated layers.
 * A layer has to have weights (CONV): we use this.
 
-<hr>
-<center><a href="https://i.imgur.com/cM3BClZ.png" target="_blank">
-<img width="600" src="https://i.imgur.com/cM3BClZ.png"/></a>
-</center><center>Figure 7. CNN Example.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/cM3BClZ.png"
+  cap="Figure 7. CNN Example."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Layer 3 is the first fully connected layer (FC3) because we have 400 units densely connected to 120 units. This fully connected layer is just like a single neural network layer that we learned in the previous courses. And we have the corresponding parameter matrix W<sup>[3]</sup> (120 x 400) and bias parameter b<sup>[3]</sup> (120 x 1).
 
@@ -216,20 +214,19 @@ As you go deeper in Convolutional Neural Network, usually nH and nW will decreas
 
 Another pretty common pattern you see in CNN is that they have maybe one or more CONV layers followed by a Pooling layer; and then at the end, you have a few fully connected layers; and then followed by maybe a softmax.
 
-<hr>
-<center><a href="https://i.imgur.com/cptVtaB.png" target="_blank">
-<img width="600" src="https://i.imgur.com/cptVtaB.png"/></a>
-</center><center>Figure 8. Some information of each component.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/cptVtaB.png"
+  cap="Figure 8. Some information of each component."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 * Pooling layers don't have any parameters.
 * CONV layers tend to have relatively few parameters.
 * Fully Connected layers tend to have many parameters.
 * The Activation Sizes go down gradually as you go deeper in CNN. (If it drops too quickly, that's usually not great for performance as well.)
 
-###### **Why Convolution?**
+### **Why Convolution?**
 
 2 reasons why CNN has CONV layers over just using Fully Connected layers:
 * Parameter sharing: A feature detector (such as vertial edge detector) that's useful in one part of the image is probably useful in another part of the image.
