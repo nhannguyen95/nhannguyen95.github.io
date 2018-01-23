@@ -1,16 +1,20 @@
 ---
 layout: post
-title:  "Coursera Deep Learning Course 2 Week 3 notes: Hyperparameter tuning, Batch Normalization and Programming Frameworks"
+title:  "Week 3 - Hyperparameter tuning, Batch Normalization and Programming Frameworks"
 date: 2017-10-31 20:27:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
-no-post-nav: 0
-comments: 1
+# categories: ['machine learning', 'deep learning']
+tags:
+  - Coursera Deep Learning Course 2 - Improving Deep Neural Networks notes
+comments: true
+mathjax: true
+content_level: 3
+img: /images/deep-learning-ai.png
+summary: Convolutional Neural Networks notes
 ---
 
-##### **Hyperparameter Tuning**
+## **Hyperparameter Tuning**
 
-###### **Tuning process**
+### **Tuning process**
 
 Most important hyperparameters:
 * Learning rate α.
@@ -23,13 +27,12 @@ Some less important hyperparameters:
 * Hyperparameters in learning rate decay.
 * β<sub>1</sub>, β<sub>2</sub>, ε (0.9, 0.999, 10<sup>-8</sup> are good default values).
 
-<hr>
-<center><a href="https://i.imgur.com/ECau3cP.png" target="_blank">
-<img width="600" src="https://i.imgur.com/ECau3cP.png"/></a>
-</center><center>Figure 1. Try random values, don't use a grid.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/ECau3cP.png"
+  cap="Figure 1. Try random values, don't use a grid."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 The reasons you shouldn't use a grid is that it's difficult to know in advance which hyperparameters is the most important one for your problem.
 
@@ -39,15 +42,14 @@ In practice, you might be searching over many more hyperparameters (instead of o
 
 **Coarse to fine sampling scheme**
 
-<hr>
-<center><a href="https://i.imgur.com/OmW6ulI.png" target="_blank">
-<img width="600" src="https://i.imgur.com/OmW6ulI.png"/></a>
-</center><center>Figure 2. After doing a coarse sample of the entire square, you find that your algorithm works really well on the blue-circled points, then you may want to focus more resources on searching within the smaller blue square if you're suspecting that the best setting, you can then sample more densely into smaller square.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/OmW6ulI.png"
+  cap="Figure 2. After doing a coarse sample of the entire square, you find that your algorithm works really well on the blue-circled points, then you may want to focus more resources on searching within the smaller blue square if you're suspecting that the best setting, you can then sample more densely into smaller square."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-###### **Using an appropriate scale to pick hyperparameters**
+### **Using an appropriate scale to pick hyperparameters**
 
 This lesson talks about the way to correctly random the values of hyperparameters.
 
@@ -57,9 +59,10 @@ This lesson talks about the way to correctly random the values of hyperparameter
 
 **Picking hyperparameters at random**
 
-Says we want to randomly pick value for n<sup>[l]</sup> using (discrete) uniform distribution, and the value is between 50 and 100, this is reasonable.
+Says we want to randomly pick value for $n^{[l]}$ using (discrete) uniform distribution, and the value is between 50 and 100, this is reasonable.
 
 **Appropriate scale for hyperparameters**
+
 However, if we random the value for the learning rate between 0.0001 and 1, we will spend 90% ($$ \frac{0.9}{1 - 0.0001}$$) resources for searching values between 0.1 and 1, and only 10% for searching values between 0.0001 and 0.1, this doesn't seem good.
 
 Instead, it will be more reasonable to search for the learning rate on a log scale (instead of using linear scale).
@@ -85,7 +88,7 @@ If β goes from 0.999 to 0.9995, this will have a huge impact on your algorithm.
 
 This whole sampling process causes you to sample more densely in the region of when β is close to 1. (or when 1 - β is close to 0.)
 
-###### **Hyperparameters tuning in practice: Pandas vs. Caviar**
+### **Hyperparameters tuning in practice: Pandas vs. Caviar**
 
 In terms of how people search for hyperparameters, there are 2 major different ways:
 * **Babysitting one model** even as it's training over many days or several weeks: watching the model performance and patiently nudging the learning rate up or down. This is used when you have a huge data but don't have enough resources to train a lot of models at the same time.
@@ -93,15 +96,15 @@ In terms of how people search for hyperparameters, there are 2 major different w
 
 We also call the first approach the **Panda** approach, and the latter **Caviar** strategy (related to how these 2 animals raise their children).
 
-##### **Batch Normalization**
+## **Batch Normalization**
 
-###### **Normalizing activations in a network**
+### **Normalizing activations in a network**
 
 Batch normalization makes your hyperparameters search problem much easier and makes your neural networks much more robust and will also enable you to much more easily train even very deep networks.
 
-We previously normalize the input feature X (a<sup>[0]</sup>), in a (deep) neural network, can we also normalize a<sup>[l]</sup> (hidden units) so as to train W<sup>[l+1]</sup>, b<sup>[l+1]</sup> faster? (Since a<sup>[l]</sup> is the input of layer l+1.)
+We previously normalize the input feature X ($a^{[0]}$), in a (deep) neural network, can we also normalize $a^{[l]}$ (hidden units) so as to train $W^{[l+1]}, b^{[l+1]}$ faster? (Since $a^{[l]}$ is the input of layer l+1.)
 
-This is what Batch Normalization does, we actually normalize z<sup>[l]</sup> (not a<sup>[l]</sup>, there are some debate about this, but in practice, normalizing z first is much more efficiently).
+This is what Batch Normalization does, we actually normalize $z^{[l]}$ (not $a^{[l]}$, there are some debate about this, but in practice, normalizing z first is much more efficiently).
 
 **Implementing Batch norm**
 
@@ -121,17 +124,16 @@ $$ \gamma$$ and $$ \beta$$ are learnable parameters, they are updated the same w
 
 Intuition: for example if you're using Sigmoid activation function, you may not want your z values clustered in the region of mean 0 and variance 1:
 
-<hr>
-<center><a href="https://i.imgur.com/2DLfCIj.png" target="_blank">
-<img width="500" src="https://i.imgur.com/2DLfCIj.png"/></a>
-</center><center>Figure 3. Sigmoid function and the distribution of mean 0 and variance 1 data.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/2DLfCIj.png"
+  cap="Figure 3. Sigmoid function and the distribution of mean 0 and variance 1 data."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 in order to better take advantage of the nonlinearity of sigmoid function.
 
-###### **Fitting Batch Norm into a neural network**
+### **Fitting Batch Norm into a neural network**
 
 $$ a^{[l]} = g^{[l]}(\tilde{z}^{[l]})$$
 
@@ -139,7 +141,7 @@ $$ a^{[l]} = g^{[l]}(\tilde{z}^{[l]})$$
 
 In practice, batch norm is usually applied with mini-batches of the training set.
 
-Because batch norm zeros out the mean of z<sup>[l]</sup> values (say in layer l), we can eliminate the parameters b<sup>[l]</sup>:
+Because batch norm zeros out the mean of $z^{[l]}$ values (say in layer l), we can eliminate the parameters $b^{[l]}$:
 
 $$ z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]} = W^{[l]}a^{[l-1]}$$
 
@@ -161,7 +163,7 @@ for t = 1 .. number of minibatches
    (you can perform the update with momentum, RMSProp, Adam..)
 ```
 
-###### **Why does Batch Norm work?**
+### **Why does Batch Norm work?**
 
 **Covariate shift**:
 
@@ -173,9 +175,9 @@ And this is true even if the ground true function mapping from X to Y remains un
 
 **Why covariate shift is a problem with neural networks?**
 
-Consider the layer l = 3, this layer has the input which is the activation units of the 2nd layer a<sup>[2]</sup>, and is also affected by the previous layers' values; it bases on all of those values and try to map them to $$ \hat{y}$$. (i.e. learn W<sup>[>=3]</sup>, b<sup>[>=3]</sup> parameters so the network does a good job.)
+Consider the layer l = 3, this layer has the input which is the activation units of the 2nd layer $a^{[2]}$, and is also affected by the previous layers' values; it bases on all of those values and try to map them to $ \hat{y}$. (i.e. learn $W^{[>=3]}, b^{[>=3]}$ parameters so the network does a good job.)
 
-However, a<sup>[2]</sup> changes all the time (because W<sup>[<3]</sup>, b<sup>[<3]</sup>) change all the time), and so it's suffering from the problem of covariate shift.
+However, $a^{[2]}$ changes all the time (because $W^{[<3]}, b^{[<3]}$) change all the time), and so it's suffering from the problem of covariate shift.
 
 **What batch norm does** is that it reduces the amount that the distribution of these hidden unit values shifts around. It means that the hidden unit values may change, but their mean and variance remain the same. Therefore, it limits the amount to which updating the parameters in the earlier layers can affect the distributions of values that the 3rd layer sees. Or in other words:
 * It causes the previous hidden unit values become more stable.
@@ -187,18 +189,18 @@ And this has the effect of speeding up of learning in the whole network.
 **Batch norm also has regularization effect**
 
 * Each mini-batch is scaled by the mean/variance computed on just that mini-batch.
-* This adds some noise to the values z<sup>[l]</sup> within that mini-batch. So similar to dropout, it adds some noise to each hidden layers' activations.
+* This adds some noise to the values $z^{[l]}$ within that mini-batch. So similar to dropout, it adds some noise to each hidden layers' activations.
 * This has a slight regularization effect.
 
 If you use a bigger mini-batch size, you're reducing noises and therefore reducing the regularization effect.
 
-###### **Batch Norm at test time**
+### **Batch Norm at test time**
 
 Go back here (to take notes) after finishing programming assignment.
 
-##### **Multi-class classification**
+## **Multi-class classification**
 
-###### **Softmax Regression**
+### **Softmax Regression**
 
 $$ C$$ = number of classes.
 
@@ -214,7 +216,7 @@ $$ t = e^{z^{[L]}} ~ \text{(element wise)}$$
 
 $$ \hat{y}_{i} = a^{[L]}_{i} = \frac{t_{i}}{\sum_{j=1}^{C}t_{j}}$$
 
-###### **Training a softmax classifier**
+### **Training a softmax classifier**
 
 Softmax regression generalizes logistic regression to C classes. If C = 2, softmax reduces to logistic regression.
 
@@ -228,9 +230,9 @@ $$ J(W, b) = \frac{1}{m}\sum_{i=1}^{m}\it\unicode{xA3}(\hat{y}^{(i)}, y^{(i)})$$
 
 The dimension of $$ \hat{y}, y$$ is `(C, m)` (stack the input horizontally).
 
-##### **Introduction to programming frameworks**
+## **Introduction to programming frameworks**
 
-###### **Deep learning frameworks**
+### **Deep learning frameworks**
 
 * Caffe/Caffe 2
 * CNTK
@@ -243,6 +245,6 @@ The dimension of $$ \hat{y}, y$$ is `(C, m)` (stack the input horizontally).
 * Theano
 * Torch
 
-###### **TensorFlow**
+### **TensorFlow**
 
 No notes.
