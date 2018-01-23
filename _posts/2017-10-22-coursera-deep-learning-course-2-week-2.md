@@ -1,28 +1,31 @@
 ---
 layout: post
-title:  "Coursera Deep Learning Course 2 Week 2 notes: Optimization algorithms"
+title:  "Week 2 - Optimization algorithms"
 date: 2017-10-22 09:16:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
-no-post-nav: 0
-comments: 1
+# categories: ['machine learning', 'deep learning']
+tags:
+  - Coursera Deep Learning Course 2 - Improving Deep Neural Networks notes
+comments: true
+mathjax: true
+content_level: 3
+img: https://i.imgur.com/lFo9ig0.png
+summary: Convolutional Neural Networks notes
 ---
 
-##### **Optimization algorithms**
+## **Optimization algorithms**
 
-###### **Optimization algorithms**
+### **Optimization algorithms**
 
 x<sup>{i}</sup>, y<sup>{i}</sup>: the i<sup>th</sup> mini batch.
 
 For example if we have m = 5000000 and the batch size = 1000, then there are 5000 mini batches.
 
-<hr>
-<center><a href="https://i.imgur.com/5L10VMS.png" target="_blank">
-<img width="600" src="https://i.imgur.com/5L10VMS.png"/></a>
-</center><center>Figure 1. Implementation of Mini-batch gradient descent.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/5L10VMS.png"
+  cap="Figure 1. Implementation of Mini-batch gradient descent."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Passing this for loop is called doing 1 `epoch` of training (means a single pass through the training set).
 
@@ -30,15 +33,14 @@ Batch gradient descent: 1 epoch allows us to take only 1 gradient descent step.
 
 Mini-batch gradient descent: 1 epoch allows us to take (say) 5000 gradient descent step.
 
-###### **Understanding mini-batch gradient descent**
+### **Understanding mini-batch gradient descent**
 
-<hr>
-<center><a href="https://i.imgur.com/FbSYeEy.png" target="_blank">
-<img width="600" src="https://i.imgur.com/FbSYeEy.png"/></a>
-</center><center>Figure 2. It's ok if the cost function doesn't go down on every iteration while running Mini-batch gradient descent.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/FbSYeEy.png"
+  cap="Figure 2. It's ok if the cost function doesn't go down on every iteration while running Mini-batch gradient descent."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 [Recall](https://nhannguyen95.github.io/2017/09/15/coursera-week-10-notes-large-scale-machine-learning)
 
@@ -52,19 +54,18 @@ In practice, Mini-batch size = (1, m):
 
 If small training set: just use BGD.
 
-If bigger traniing set: mini-batch size = 64, 128, 256, 512...
+If bigger training set: mini-batch size = 64, 128, 256, 512...
 
 Make sure mini-batch size fits in CPU/GPU memory.
 
-###### **Exponentially weighted averages**
+### **Exponentially weighted averages**
 
-<hr>
-<center><a href="https://i.imgur.com/lFo9ig0.png" target="_blank">
-<img src="https://i.imgur.com/lFo9ig0.png"/></a>
-</center><center>Figure 3. Exponentially weighted averages.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/lFo9ig0.png"
+  cap="Figure 3. Exponentially weighted averages."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Blue scatter: **θ<sub>i</sub> = x** (temperature of day i is x, 1 ≤ i ≤ 365).
 
@@ -72,9 +73,9 @@ Red line (**Moving average/Exponentially weighted averages of the daily temperat
 
 Intuition: v<sub>i</sub> is between v<sub>i-1</sub> and θ<sub>i</sub>. The higher β is, the closer v<sub>i</sub> is to v<sub>i-1</sub>.
 
-Another intuition: v<sub>i</sub> as approximately averaging over $$ \frac{1}{1 - \beta}$$ days' temperature.
+Another intuition: v<sub>i</sub> as approximately averaging over $ \frac{1}{1 - \beta}$ days' temperature.
 
-###### **Understanding exponentially weighted averages**
+### **Understanding exponentially weighted averages**
 
 **Implementing exponentially weighted averages**
 
@@ -86,17 +87,16 @@ V<sub>θ</sub> = βV<sub>θ</sub> + (1 - β)θ<sub>2</sub>
 
 ...
 
-###### **Bias correction in exponentially weighted averages**
+### **Bias correction in exponentially weighted averages**
 
 **Problem**
 
-<hr>
-<center><a href="https://i.imgur.com/oXc9LEH.png" target="_blank">
-<img src="https://i.imgur.com/oXc9LEH.png"/></a>
-</center><center>Figure 4. The expected green curve with β = 0.98, and the real purple curve.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/oXc9LEH.png"
+  cap="Figure 4. The expected green curve with β = 0.98, and the real purple curve."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 This is because the initialization of v<sub>0</sub> = 0.
 
@@ -104,19 +104,18 @@ This is because the initialization of v<sub>0</sub> = 0.
 
 v<sub>i</sub>(new) = v<sub>i</sub>(old) / (1- β<sup>t</sup>)
 
-###### **Gradient descent with momentum**
+### **Gradient descent with momentum**
 
 This almost always works faster than the standard gradient descent.
 
 This is what happens when you're using Mini-batch Gradient Descent:
 
-<hr>
-<center><a href="https://i.imgur.com/FsikbuO.png" target="_blank">
-<img width="600" src="https://i.imgur.com/FsikbuO.png"/></a>
-</center><center>Figure 5. This up and down (blue curve) oscillations slows down gradient descent and prevent you from using a larger learning rate (because it may be overshooting and end up diverging - purple curve).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/FsikbuO.png"
+  cap="Figure 5. This up and down (blue curve) oscillations slows down gradient descent and prevent you from using a larger learning rate (because it may be overshooting and end up diverging - purple curve)."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Gradient descent with momentum:
 
@@ -132,13 +131,11 @@ On iteration t:
 
 This smooths out the steps of gradient descent:
 
-<hr>
-<center><a href="https://i.imgur.com/7wvu396.png" target="_blank">
-<img width="600" src="https://i.imgur.com/7wvu396.png"/></a>
-</center><center>Figure 6. The step curve of gradient descent with momentum (red curve).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/7wvu396.png"
+  cap="Figure 6. The step curve of gradient descent with momentum (red curve)."
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Imagine you take a ball and roll it down a bowl shape area:
 * The derivatives term dW, db: provide acceleration to the ball.
@@ -149,7 +146,7 @@ Hyperparameters: α, β. The most comment value of β is 0.9 (average on last 10
 
 People don't usually use bias correction in gradient descent with momentum because only after about 10 iterations, your moving average will have already warmed up and is no longer a bias estimate.
 
-###### **RMSprop**
+### **RMSprop**
 
 **Root Mean Square prop**
 
@@ -165,17 +162,15 @@ On iteration i:
 
 By putting momentum and RMSprop together, you can get an even better optimization algorithm.
 
-###### **Adam optimization algorithm**
+### **Adam optimization algorithm**
 
 **Adam = Adaptive moment estimation**
 
-<hr>
-<center><a href="https://i.imgur.com/mnE5YwA.png" target="_blank">
-<img width="600" src="https://i.imgur.com/mnE5YwA.png"/></a>
-</center><center>Figure 7. Adam optimization algorithm.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/mnE5YwA.png"
+  cap="Figure 7. Adam optimization algorithm."
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Hyperparameters choice:
 * α: needs to be tune
@@ -183,17 +178,15 @@ Hyperparameters choice:
 * β2 = 0.999
 * ε = 10<sup>-8</sup>
 
-###### **Learning rate decay**
+### **Learning rate decay**
 
 Learning rate decay = slowly reduce learning rate over time.
 
-<hr>
-<center><a href="https://i.imgur.com/d18roRI.png" target="_blank">
-<img width="600" src="https://i.imgur.com/d18roRI.png"/></a>
-</center><center>Figure 8. Algorithm with a fixed value of learning rate may never converge (blue curve).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/d18roRI.png"
+  cap="Figure 8. Algorithm with a fixed value of learning rate may never converge (blue curve)."
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 **Learning rate decay**
 
@@ -211,15 +204,13 @@ $$ \alpha_{0}$$ and $$ decayRate$$ become hyperparameters you need to tune.
 
 * Manual decay: manually decrease learning rate.
 
-###### **The problem of local optima**
+### **The problem of local optima**
 
-<hr>
-<center><a href="https://i.imgur.com/isnTNWt.png" target="_blank">
-<img width="600" src="https://i.imgur.com/isnTNWt.png"/></a>
-</center><center>Figure 9. The local optima problem people often worried about (left) and the reality in deep learning.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/isnTNWt.png"
+  cap="Figure 9. The local optima problem people often worried about (left) and the reality in deep learning."
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 Most point of zero gradients (zero derivatives) are not local optima like points in the left graph, but saddle points in the right graph.
 
