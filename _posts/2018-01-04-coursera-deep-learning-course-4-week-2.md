@@ -27,10 +27,8 @@ The idea of these might be useful for your own work.
 
 * Inception neural network
 
-<a name="-classic-networks"></a>
 ### **Classic Networks**
 
-<a name="-lenet-5"></a>
 #### **LeNet - 5**
 
 {% include image.html
