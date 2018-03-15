@@ -8,6 +8,7 @@ tags:
 comments: true
 mathjax: true
 content_level: 3
+img: http://i.imgur.com/KMEF7z6.png
 summary: Trình bày chi tiết cách áp dụng thuật toán ID3 vào bài tập xây dựng cây quyết định
 ---
 
@@ -36,7 +37,7 @@ Sử dụng thuật toán ID3, xây dựng cây quyết định cho tập dữ l
 
 **Chọn nút gốc của cây quyết định**:
 
-Tập dữ liệu hiện tại có 9 kết quả Yes và 5 kết quả No, ta kí hiệu là S: [9+, 5-].
+Tập dữ liệu hiện tại có 9 kết quả Yes và 5 kết quả No, ta kí hiệu là S: \[9+, 5-\].
 
 Theo công thức tính **Entropy** (độ hỗn tạp dữ liệu) của một tập:
 
