@@ -66,9 +66,9 @@ $$
 * Entropy là 1 nếu tập hợp chứa số lượng bằng nhau các thành viên thuộc lớp âm và dương.
 
 Xét thuộc tính `Outlook`, thuộc tính này nhận 3 giá trị là Sunny, Overcast, Rain. Ứng với mỗi thuộc tính, ta có:
-* S<sub>Sunny</sub>: [2+, 3-] (có nghĩa là trong tập dữ liệu hiện tại (S), có 2 kết quả Yes và 3 kết quả No tại Outlook = Sunny). Tương tự:
-* S<sub>Overcast</sub>: [4+, 0-].
-* S<sub>Rain</sub>: [3+, 2-].
+* S<sub>Sunny</sub>: $ \[2+, 3-\]$ (có nghĩa là trong tập dữ liệu hiện tại (S), có 2 kết quả Yes và 3 kết quả No tại Outlook = Sunny). Tương tự:
+* S<sub>Overcast</sub>: $ \[4+, 0-\]$.
+* S<sub>Rain</sub>: $ \[3+, 2-\]$.
 
 Tiếp theo tính **Information Gain** (độ lợi thông tin) của thuộc tính `Outlook` trên tập S. Thông số này phản ánh mức độ hiệu quả của một thuộc tính trong phân lớp. Đó là sự rút giảm mong muốn của Entropy gây ra bởi sự phân hoạch các mẫu dữ liệu theo thuộc tính này. Công thức tính IG của thuộc tính A trên tập S như sau:
 
@@ -80,7 +80,7 @@ trong đó:
 * Value(A) là tập các giá trị có thể cho thuộc tính A.
 * S<sub>v</sub> là tập con của S mà A nhận giá trị v.
 
-_Lấy ví dụ với thuộc tính A = `Outlook`, ta có Value(A) = {Sunny, Overcast, Rain}, và S<sub>Sunny</sub> = [2+, 3-] như đã tính ở trên_
+_Lấy ví dụ với thuộc tính A = `Outlook`, ta có Value(A) = {Sunny, Overcast, Rain}, và S<sub>Sunny</sub> = $ \[2+, 3-\]$ như đã tính ở trên_
 
 Từ công thức, dễ dàng tính được:
 
@@ -112,16 +112,16 @@ Thuộc tính `Outlook` có Information Gain cao nhất, chọn nó làm nút g�
 **Xây dựng tiếp cây quyết định**:
 
 Sau khi chọn được nút gốc là `Outlook`, tiếp theo ta tính tiếp các nút tại mỗi thuộc tính của nút vừa chọn. Trong hình 1:
-* Nhánh bên trái cùng ứng với `Outlook = Sunny`, có S<sub>Sunny</sub> là [2+, 3-], chưa phân lớp hoàn toàn nên vẫn phải tính toán chọn nút tại đây. Tương tự cho nhánh phải cùng.
+* Nhánh bên trái cùng ứng với `Outlook = Sunny`, có S<sub>Sunny</sub> là $ \[2+, 3-\]$, chưa phân lớp hoàn toàn nên vẫn phải tính toán chọn nút tại đây. Tương tự cho nhánh phải cùng.
 * Nhánh ở giữa ứng với `Outlook = Overcast`, tập dữ liệu tại nhánh này đã hoàn toàn phân lớp dương với 4+ và 0-. Tại đây đã có thể quyết định, khi `Outlook = Overcast` thì có thể đi chơi tennis.
 
-Bây giờ ta sẽ thực hiện tính toán với nhánh trái cùng, trên tập S<sub>Sunny</sub> = [2+, 3-].
+Bây giờ ta sẽ thực hiện tính toán với nhánh trái cùng, trên tập S<sub>Sunny</sub> = $ \[2+, 3-\]$.
 
 Hoàn toàn tương tự như cách tìm nút gốc, ta tính Information Gain cho 3 thuộc tính còn lại là `Temp`, `Humidity` và `Wind` (trên tập S<sub>Sunny</sub>).
 
 Xét thuộc tính `Humidity`, có:
-* S<sub>Normal</sub>: [2+, 0-] (nghĩa là tại những dữ liệu có `Outlook = Overcast` và `Humidity = Normal`, có 2 dữ liệu, tất cả đều cho kết quả Yes).
-* S<sub>High</sub>: [0, 3-].
+* S<sub>Normal</sub>: $ \[2+, 0-\]$ (nghĩa là tại những dữ liệu có `Outlook = Overcast` và `Humidity = Normal`, có 2 dữ liệu, tất cả đều cho kết quả Yes).
+* S<sub>High</sub>: $ \[0, 3-\]$.
 
 Từ đó:
 
