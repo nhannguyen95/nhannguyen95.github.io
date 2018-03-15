@@ -9,7 +9,9 @@
   <div class="thecap">
     {{ include.cap }}
     <br />
-    (Source: <a href="{{ include.src_url }}" target="_blank">{{ include.src_cap }}</a>)
+    {% if include.src_cap %}
+      (Source: <a href="{{ include.src_url }}" target="_blank">{{ include.src_cap }}</a>)
+    {% endif %}
   </div>
   {% endif %}
 
