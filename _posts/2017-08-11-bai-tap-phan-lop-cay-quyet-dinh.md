@@ -2,10 +2,13 @@
 layout: post
 title:  "Bài tập xây dựng cây quyết định sử dụng thuật toán ID3"
 date: 2017-08-11 17:19:00 +0700
-categories: ['data mining']
+# categories: ['data mining']
 tags:
-no-post-nav: 0
-comments: 1
+  - data mining
+comments: true
+mathjax: true
+content_level: 3
+summary: Trình bày chi tiết cách áp dụng thuật toán ID3 vào bài tập xây dựng cây quyết định
 ---
 
 ##### **Bài toán**
@@ -100,11 +103,10 @@ $$
 
 Thuộc tính `Outlook` có Information Gain cao nhất, chọn nó làm nút gốc.
 
-<hr>
-<center><img src="http://i.imgur.com/r2LMhyG.png"/>
-</center>
-<center>Hình 1. Cây quyết định sau khi chọn nút gốc</center>
-<hr>
+{% include image.html
+  url="http://i.imgur.com/r2LMhyG.png"
+  cap="Hình 1. Cây quyết định sau khi chọn nút gốc."
+%}
 
 **Xây dựng tiếp cây quyết định**:
 
@@ -138,18 +140,18 @@ $$
 
 Nhận thấy thuộc tính `Humidity` có Information Gain cao nhất, chọn thuộc tính này làm nút cho nhánh trái cùng.
 
-<hr>
-<center><img src="http://i.imgur.com/qsqcnUS.png" width="595"/>
-</center>
-<center>Hình 2. Cây quyết định sau khi chọn nút cho nhánh trái cùng</center>
-<hr>
+{% include image.html
+  url="http://i.imgur.com/qsqcnUS.png"
+  cap="Hình 2. Cây quyết định sau khi chọn nút cho nhánh trái cùng."
+%}
+
 
 **Cây quyết định hoàn chỉnh**:
 
 Làm tương tự cho nút tại nhánh phải ngoài (đến khi tất cả các nút lá của cây đều đã phân lớp), ta được cây quyết định hoàn chỉnh như sau:
 
-<hr>
-<center><img src="http://i.imgur.com/KMEF7z6.png" width="595"/>
-</center>
-<center>Hình 3. Cây quyết định hoàn chỉnh</center>
-<hr>
+{% include image.html
+  url="http://i.imgur.com/KMEF7z6.png"
+  cap="Hình 3. Cây quyết định hoàn chỉnh."
+%}
+
