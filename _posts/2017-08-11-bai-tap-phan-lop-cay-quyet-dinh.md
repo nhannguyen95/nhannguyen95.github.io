@@ -37,7 +37,7 @@ Sử dụng thuật toán ID3, xây dựng cây quyết định cho tập dữ l
 
 **Chọn nút gốc của cây quyết định**:
 
-Tập dữ liệu hiện tại có 9 kết quả Yes và 5 kết quả No, ta kí hiệu là S: \[9+, 5-\].
+Tập dữ liệu hiện tại có 9 kết quả Yes và 5 kết quả No, ta kí hiệu là S: $ \\[9+, 5-\\] $.
 
 Theo công thức tính **Entropy** (độ hỗn tạp dữ liệu) của một tập:
 
