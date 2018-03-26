@@ -24,7 +24,7 @@ Tìm các tập mục có độ hỗ trợ ≥ 0.6 (tức tần số sup. ≥ 3)
 
 ##### **Lý thuyết**
 
-Xem thêm: [bài tập khai phá tập phổ biến bằng thuật toán Apriori](https://nhannguyen95.github.io/2017/08/12/bai-tap-khai-pha-tap-pho-bien-bang-thuat-toan-apriori).
+Xem thêm: [bài tập khai phá tập phổ biến bằng thuật toán Apriori](https://nhannguyen95.github.io/bai-tap-khai-pha-tap-pho-bien-bang-thuat-toan-apriori/).
 
 FP-Growth biểu diễn dữ liệu các giao dịch bằng một cấu trúc dữ liệu gọi là FP-Tree.
 
