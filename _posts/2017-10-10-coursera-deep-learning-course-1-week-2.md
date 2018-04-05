@@ -233,11 +233,12 @@ J(w, b) = \frac{1}{m}\sum_{i=1}^{m} \it\unicode{xA3}(a^{(i)}, y^{(i)}) \\
 $$
 
 {% include image.html
-  url=https://i.imgur.com/fp4aHAL.png"
+  url="https://i.imgur.com/fp4aHAL.png"
   cap="Figure 5. Unvectorized algorithm to compute derivative."
   src_cap="Coursera Deep Learning course"
   src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
 %}
+
 
 ## **Python and Vectorization**
 
@@ -260,7 +261,7 @@ No notes.
 ### **Vectorizing Logistic Regression's Gradient Ouput**
 
 {% include image.html
-  url=https://i.imgur.com/Xbh4Tdb.png"
+  url="https://i.imgur.com/Xbh4Tdb.png"
   cap="Figure 6. Vectorizing implementation of Logistic Regression."
   src_cap="Coursera Deep Learning course"
   src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
