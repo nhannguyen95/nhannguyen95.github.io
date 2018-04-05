@@ -1,26 +1,29 @@
 ---
 layout: post
-title:  "Coursera Deep Learning Course 1 Week 2 notes: Neural Networks Basics"
+title:  "Week 2 - Neural Networks Basics"
 date: 2017-10-10 16:20:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
-no-post-nav: 0
-comments: 1
+# categories: ['machine learning', 'deep learning']
+tags:
+  - Coursera Deep Learning Course 1
+comments: true
+mathjax: true
+content_level: 3
+img: https://i.imgur.com/p8JojW8.png
+summary: Convolutional Neural Networks notes
 ---
 
-##### **Logistic Regression as a Neural Network**
+## **Logistic Regression as a Neural Network**
 
-###### **Binary Classification**
+### **Binary Classification**
 
 To store an image, the computer stores three separate matrices corresponding to the red, green, and blue color channels of the image.
 
-<hr>
-<center>
-<img src="https://i.imgur.com/Yt0iTte.png"/>
-</center><center>Figure 1. Three separate 5x4 matrices corresponding to three color channels (to store a 5x4 pixel image).</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/Yt0iTte.png"
+  cap="Figure 1. Three separate 5x4 matrices corresponding to three color channels (to store a 5x4 pixel image)."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 We can unroll the matrices to obtain an input features x.
 
@@ -36,7 +39,7 @@ $$ Y =  \begin{bmatrix}
 y^{(1)} & ...  & y^{(m)}
 \end{bmatrix}\in \mathbb{R}^{1 \times m}$$
 
-###### **Logistic Regression**
+### **Logistic Regression**
 
 Logistic Regression is used when the output labels y in supervised learning problem are all 0 or 1 (binary classification problem).
 
@@ -58,7 +61,7 @@ $$ \hat{y} = \sigma(w^{T}x + b) = \frac{1}{1 + e^{-(w^{T}x + b)}} $$
 
 **When implement neural networks, it will be easier if we separate $$ w$$ and $$ b$$ (e.g. not unroll them into an unique parameter vector).**
 
-###### **Logistic Regression Cost Function**
+### **Logistic Regression Cost Function**
 
 Loss (error) function (defined with the respect to a single training example):
 
@@ -68,7 +71,7 @@ Cost function (the average of the loss functions of the entire training set):
 
 $$ J(w, b) = \frac{1}{m} \sum_{i=1}^{m} \it\unicode{xA3} (\hat{y}^{(i)}, y^{(i)})$$
 
-###### **Gradient Descent**
+### **Gradient Descent**
 
 $$ J(w, b)$$ is a convex function.
 
@@ -78,22 +81,22 @@ $$ w = w - \alpha \frac{dJ(w, b)}{dw}$$
 
 $$ b = b - \alpha \frac{dJ(w, b)}{db}$$
 
-###### **Derivatives**
+### **Derivatives**
 
 No notes.
 
-###### **More Derivative Examples**
+### **More Derivative Examples**
 
 No notes.
 
-###### **Computation Graph**
+### **Computation Graph**
 
 Say $$ f(x, y, z) = (x + y)z$$, to compute $$ f$$ we do 2 steps:
 
 * Compute $$ q = x + y$$
 * Compute $$ f = q * z$$
 
-###### **Derivatives with a Computation Graph**
+### **Derivatives with a Computation Graph**
 
 Backpropagation is a training algorithm consisting of 2 steps:
 * **Feed forward** the values: input values at the input layer and it travels from input to hidden and from hidden to output layer.
@@ -135,13 +138,12 @@ dfdx = 1.0 * dfdq  # The multiplication is the chain rule.
 dfdy = 1.0 * dfdq
 {% endhighlight %}
 
-<hr>
-<center>
-<img width="500" src="https://i.imgur.com/p8JojW8.png"/>
-</center><center>Figure 2. A circuit diagram visualizes the above computation.</center>
-<center>
-<i><a href="http://cs231n.github.io/optimization-2/">Source: CS231n Convolutional Neural Networks for Visual Recognition</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/p8JojW8.png"
+  cap="Figure 2. A circuit diagram visualizes the above computation."
+  src_cap="CS231n Convolutional Neural Networks for Visual Recognition"
+  src_url="http://cs231n.github.io/optimization-2/"
+%}
 
 The **forward pass** compute values (shown in green)  from inputs to outputs.
 
@@ -155,13 +157,12 @@ Chain rule says that the gate should take that gradient and multiply it into eve
 
 $$ f(w, x) = \frac{1}{1 + e^{-(w_{0}x_{0}+w_{1}x_{1}+w_{2})}}$$
 
-<hr>
-<center>
-<img width="600" src="https://i.imgur.com/pDmQ4l5.png"/>
-</center><center>Figure 3. Circuit diagram that visualizes the f(w, x) function, I added some variable names on some gates for computational illustration reasons.</center>
-<center>
-<i><a href="http://cs231n.github.io/optimization-2/">Source: CS231n Convolutional Neural Networks for Visual Recognition</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/pDmQ4l5.png"
+  cap="Figure 3. Circuit diagram that visualizes the f(w, x) function, I added some variable names on some gates for computational illustration reasons."
+  src_cap="CS231n Convolutional Neural Networks for Visual Recognition"
+  src_url="http://cs231n.github.io/optimization-2/"
+%}
 
 According to the operators on the gates, we have these following relations:
 
@@ -199,7 +200,7 @@ dx = [w[0] * ddot, w[1] * ddot]
 dw = [x[0] * ddot, x[1] * ddot, 1.0 * ddot]
 {% endhighlight %}
 
-###### **Logistic Regression Gradient Descent**
+### **Logistic Regression Gradient Descent**
 
 Recap:
 
@@ -209,13 +210,12 @@ z = w^{T}x + b \\
 \it\unicode{xA3}(a, y) = -(ylog(a) + (1 - y)log(1 - a))
 $$
 
-<hr>
-<center>
-<img width="550" src="https://i.imgur.com/J0od0YO.png"/>
-</center><center>Figure 4. Computation graph to compute gradient of loss function with respect to a single training example.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url="https://i.imgur.com/J0od0YO.png"
+  cap="Figure 4. Computation graph to compute gradient of loss function with respect to a single training example."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
 After finishing computing $$ dw_{1}, dw_{2}, db$$, we can perform the gradient descent update with respect to this single training example:
 
@@ -225,54 +225,52 @@ w_{2} = w_{2} - \alpha ~ dw_{2} \\
 b = b - \alpha ~ db
 $$
 
-###### **Gradient Descent on m Examples**
+### **Gradient Descent on m Examples**
 
 $$
 J(w, b) = \frac{1}{m}\sum_{i=1}^{m} \it\unicode{xA3}(a^{(i)}, y^{(i)}) \\
 \frac{\partial J(w, b)}{\partial w_{i}} = \frac{1}{m}\sum_{i=1}^{m}\frac{\partial \it\unicode{xA3}(a^{(i)}, y^{(i)})}{\partial w_{i}}
 $$
 
-<hr>
-<center>
-<img width="550" src="https://i.imgur.com/fp4aHAL.png"/>
-</center><center>Figure 5. Unvectorized algorithm to compute derivative.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url=https://i.imgur.com/fp4aHAL.png"
+  cap="Figure 5. Unvectorized algorithm to compute derivative."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-##### **Python and Vectorization**
+## **Python and Vectorization**
 
-###### **Vectorization**
+### **Vectorization**
 
 [ELI5: Why does vectorized code run faster than looped code?](https://www.reddit.com/r/explainlikeimfive/comments/4namsc/eli5why_does_vectorized_code_run_faster_than/)
 
 [SIDM - Single Instruction, Multiple Data](https://en.wikipedia.org/wiki/SIMD)
 
-###### **More Vectorization Examples**
+### **More Vectorization Examples**
 
 Neural network programming guideline:
 
 **Whenever possible, avoid explicit for-loops.**
 
-###### **Vectorizing Logistic Regression**
+### **Vectorizing Logistic Regression**
 
 No notes.
 
-###### **Vectorizing Logistic Regression's Gradient Ouput**
+### **Vectorizing Logistic Regression's Gradient Ouput**
 
-<hr>
-<center>
-<img src="https://i.imgur.com/Xbh4Tdb.png"/>
-</center><center>Figure 6. Vectorizing implementation of Logistic Regression.</center>
-<center>
-<i><a href="https://www.coursera.org/learn/neural-networks-deep-learning">Source: Coursera Deep Learning course</a></i></center>
-<hr>
+{% include image.html
+  url=https://i.imgur.com/Xbh4Tdb.png"
+  cap="Figure 6. Vectorizing implementation of Logistic Regression."
+  src_cap="Coursera Deep Learning course"
+  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+%}
 
-###### **Broadcasting in Python**
+### **Broadcasting in Python**
 
 No notes.
 
-###### **A note on python/numpy vectors**
+### **A note on python/numpy vectors**
 
 (n,): neither a column vector nor a row vector (rank 1 array in Python).
 
@@ -280,15 +278,15 @@ When programming neural network, DO NOT USE RANK 1 ARRAY.
 
 assert(a.shape == (5, 1)).
 
-###### **Quick tour of Jupyter/iPython Notebooks**
+### **Quick tour of Jupyter/iPython Notebooks**
 
 No notes.
 
-###### **Explanation of logistic regression cost function**
+### **Explanation of logistic regression cost function**
 
 No notes.
 
-##### **References**
+## **References**
 
 [1] [Backpropagation Intuition - CS231n Convolutional Neural Networks for Visual Recognition
 ](http://cs231n.github.io/optimization-2/)
