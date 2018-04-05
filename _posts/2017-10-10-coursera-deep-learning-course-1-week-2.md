@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Week 2 - Neural Networks Basics"
+title: "Week 2 - Neural Networks Basics"
 date: 2017-10-10 16:20:00 +0700
 # categories: ['machine learning', 'deep learning']
 tags:
