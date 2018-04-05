@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Week 4 - Special applications: Face recognition & Neural style transfer"
+title: "Week 4 - Special applications: Face recognition & Neural style transfer"
 date: 2018-01-24 14:14:00 +0700
 # categories: ['machine learning', 'deep learning']
 tags:
