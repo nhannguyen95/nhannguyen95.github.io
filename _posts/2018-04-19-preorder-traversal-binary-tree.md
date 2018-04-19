@@ -18,8 +18,8 @@ Given a binary tree, print its node values in preorder traversal.
 {% include image.html
   url="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/1200px-Binary_tree.svg.png"
   cap="Figure 1. Preorder of this binary tree is 2 7 2 6 5 11 5 9 4"
-  src_cap="Coursera Deep Learning course"
-  src_url="https://www.coursera.org/learn/neural-networks-deep-learning"
+  src_cap="Wikipedia - Binary tree"
+  src_url="https://en.wikipedia.org/wiki/Binary_tree"
 %}
 
 ## **2. Solution**
