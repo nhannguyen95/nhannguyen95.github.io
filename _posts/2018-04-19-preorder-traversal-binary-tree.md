@@ -63,6 +63,8 @@ void preorder(TreeNode* root) {
 }
 {% endhighlight %}
 
+<br>
+
 * Time complexity: $ O(N)$ since each node is visited exactly once.
 * Space complexity: Space complexity is the maximum size of `stack`.
 ** If the binary tree is skewed, space complexity will be $ O(1)$. 
