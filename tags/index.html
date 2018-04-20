@@ -8,23 +8,27 @@ permalink: /tags/
   <h2>No post found</h2>
 {% endif %}
 
-<div class="tags">
-  <ul class="label">
-    {% for tag in site.tags %}
-    <li>
-      <a href="#{{ tag[0] }}">
-        <span>{{ tag[0] }}</span>
-        <span class="count">{{ tag[1] | size }}</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+<div class="expose-list">
+  <div class="tags">
+    <ul class="label">
+      {% for tag in site.tags %}
+      <li>
+        <a href="#{{ tag[0] }}" id="tag-{{tag[0]}}">
+          <span>{{ tag[0] }}</span>
+          <span class="count" id="tag-count-{{tag[0]}}">{{ tag[1] | size }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <hr />
 
   {% for tag in site.tags %}
     <h2 id="{{ tag[0] }}">
       {{ tag[0] }}
     </h2>
-    <ul class="tag">
+    <ul>
       {% for post in tag[1] %}
         {% if post.title != null %}
           <li>
@@ -35,7 +39,9 @@ permalink: /tags/
             {% endif %}
                 {{ post.title }}
               </a>
-              <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+              <span style="float:right;">
+                <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+              </span>
           </li>
         {% endif %}
       {% endfor %}
