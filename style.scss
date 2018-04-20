@@ -525,8 +525,8 @@ nav {
     > a {
       display: inline-block;
       margin: 1px;
-      color: $tag-index-label-color;
-      background-color: $tag-index-label-background-color;
+      color: $oc-white;
+      // background-color: $tag-index-label-background-color;
       border-radius: 3px;
 
       span {
@@ -534,7 +534,7 @@ nav {
         padding: .5px 5px;
 
         &.count {
-          background-color: $tag-index-count-background-color;
+          // background-color: $tag-index-count-background-color;
           border-radius: 0 3px 3px 0;
         }
       }
@@ -668,4 +668,8 @@ footer {
 
 #tag-tree {
   background-color: $tag-index-label-background-color-tree;
+}
+
+#tag-count-tree {
+  background-color: $tag-index-count-background-color-tree;
 }
