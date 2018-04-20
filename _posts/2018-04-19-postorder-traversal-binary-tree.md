@@ -2,7 +2,7 @@
 layout: post
 title: "Postorder traversal on binary tree"
 date: 2018-04-19 16:49:00 +0200
-# categories: ['algorithm']
+categories: ['algorithm']
 tags:
   - tree
 comments: true
@@ -35,7 +35,7 @@ There is a solution that we perform [preorder traversal](https://nhannguyen95.gi
 {% highlight c++ linenos %}
 void postorder(TreeNode* root) {
   if (root == NULL) return;
-  
+
   postorder(root->left);
   postorder(root->right);
   print("%d ", root->val);

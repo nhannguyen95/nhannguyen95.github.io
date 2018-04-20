@@ -2,7 +2,7 @@
 layout: post
 title: "Morris Inorder Tree Traversal"
 date: 2018-04-20 11:53:00 +0200
-# categories: ['algorithm']
+categories: ['algorithm']
 tags:
   - tree
 comments: true
@@ -15,7 +15,7 @@ summary: Binary tree inorder traversal in O(1) space complexity
 ## **1. Problem statement**
 Given a binary tree, print its node values in inorder traversal.
 
-Let's call `N` is the number of nodes in tree. 
+Let's call `N` is the number of nodes in tree.
 
 Morris algorithm can solve this problem in $O(N)$ time complexity and $O(1)$ space complexity.
 
@@ -54,7 +54,7 @@ TreeNode* getPredecessor(TreeNode* node) {
 void morris_inorder(TreeNode* root) {
   TreeNode* node = root;
   // While node is sill not the last node
-  while(node != NULL) { 
+  while(node != NULL) {
     // If this node has no left child, we visit it
     // and continue traversing to its right child.
     // This is also probably the link that we had
@@ -66,7 +66,7 @@ void morris_inorder(TreeNode* root) {
       // Otherwise, we first need to get the
       // predecessor of current node
       TreeNode* p = getPredecessor(node);
-      
+
       // If we haven't created the link yet,
       // create it (so that we can get back
       // later) and then can safely continue
@@ -75,7 +75,7 @@ void morris_inorder(TreeNode* root) {
         p->right = node;
         node = node->left;
       } else {
-        // Otherwise if the link had already 
+        // Otherwise if the link had already
         // created, we know that the left
         // child of current node had already
         // visited; we now can visit the node

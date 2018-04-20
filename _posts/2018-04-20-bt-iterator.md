@@ -2,7 +2,7 @@
 layout: post
 title: "Binary tree iterators"
 date: 2018-04-20 12:54:00 +0200
-# categories: ['algorithm']
+categories: ['algorithm']
 tags:
   - tree
 comments: true

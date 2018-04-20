@@ -2,7 +2,7 @@
 layout: post
 title: "Inorder traversal on binary tree"
 date: 2018-04-19 16:04:00 +0200
-# categories: ['algorithm']
+categories: ['algorithm']
 tags:
   - tree
 comments: true
@@ -33,7 +33,7 @@ Inorder traversal means we visit the tree in **left, root, right** order: the le
 {% highlight c++ linenos %}
 void inorder(TreeNode* root) {
   if (root == NULL) return;
-  
+
   inorder(root->left);
   print("%d ", root->val);
   inorder(root->right);
