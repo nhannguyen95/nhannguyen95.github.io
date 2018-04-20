@@ -33,7 +33,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
-  margin: 1em 0 15px;
+  margin: 0 0 0.6em 0;
   padding: 0;
 
   @include mobile {
@@ -74,7 +74,7 @@ h6 {
 
 p {
   color: $text-color;
-  margin: 15px 0;
+  margin: 0 0 0.6em 0;
 }
 
 a {
@@ -113,7 +113,7 @@ hr {
 // Yeun's list style
 // https://gist.github.com/yeun/d824fc7b04b756508f4b0143535cec30
 
-ol, ul {
+.post ol, ul {
   > li {
     &:before {
       position: absolute;
@@ -126,7 +126,7 @@ ol, ul {
   }
 }
 
-ul {
+.post ul {
   > li:before {
     content: "\2022";
     padding-right: $ul-bullets-right-space;
@@ -136,9 +136,7 @@ ul {
   }
 }
 
-ol {
-  counter-reset: section;
-
+.post ol {
   > li:before {
     counter-increment: section;
     content: counter(section) ".";
@@ -147,6 +145,10 @@ ol {
     font-size: $ol-bullets-font-size;
     line-height: $ol-bullets-font-line-height;
   }
+}
+
+ol {
+  counter-reset: section;
 }
 
 ol, ul {
@@ -315,7 +317,7 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .masthead {
@@ -414,39 +416,42 @@ nav {
   border-bottom: none;
 }
 
+.tag {
+  display: inline;
+  font-weight: 300;
+  font-size: $small-font-size;
+
+  li:before {
+    content: none !important;
+  }
+
+  li {
+    display: inline;
+    margin: 0;
+
+    > a {
+      margin: 3px 3px 3px 0;
+      padding: .5px 4px;
+      color: $oc-white;
+      display: inline-block;
+      line-height: 18px;
+      // background-color: $tag-index-label-background-color;
+      // border-radius: 3px;
+    }
+  }
+}
+
 .post {
   h1 {
-    margin-bottom: .1em;
+    margin-bottom: 0;
+    line-height: 1.5;
   }
 
   .date {
     font-weight: 300;
     font-size: $small-font-size;
     color: $base-lighten-color;
-    margin-right: 3px;
-  }
-
-  .tag {
-    display: inline;
-    font-weight: 300;
-    font-size: $small-font-size;
-
-    li:before {
-      content: '';
-    }
-
-    li {
-      display: inline;
-      margin: 0;
-
-      > a {
-        margin: 3px 3px 3px 0;
-        padding: .5px 4px;
-        color: $tag-index-label-color;
-        background-color: $tag-index-label-background-color;
-        // border-radius: 3px;
-      }
-    }
+    // margin-right: 3px;
   }
 
   .comments {
@@ -638,4 +643,29 @@ footer {
       opacity: 0.8;
     }
   }
+}
+
+.highlight {
+  margin-bottom: 15px;
+}
+
+.page {
+  > h1 {
+    margin-bottom: 0;
+  }
+}
+
+.expose-list {
+  > h2 {
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+  }
+
+  ul > li {
+    margin-left: 0;
+  }
+}
+
+#tag-tree {
+  background-color: $tag-index-label-background-color-tree;
 }
