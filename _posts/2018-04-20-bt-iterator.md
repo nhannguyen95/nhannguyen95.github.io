@@ -13,7 +13,7 @@ summary: How to build preorder, inorder, postorder binary tree iterators that al
 ---
 
 ## **1. Problem statement**
-Given a binary tree, build iterator classes that can traverse a binary tree (in preorder, inorder, postorder) and have following operators:
+Given a binary tree, build iterator classes that can traverse that tree (in preorder, inorder, postorder) and have following operators:
 * `next`: return current node and move the iterator 1 step.
 * `hasNext`: check if we're done traversing the tree or not.
 
@@ -41,27 +41,27 @@ Preorder binary tree iterator:
 {% highlight c++ linenos %}
 class PreorderBTIterator {
 private:
-	stack<TreeNode*> stk;
+  stack<TreeNode*> stk;
 public:
-	PreorderBTIterator(TreeNode* root) {
-        if (root != NULL) stk.push(root);
-	}
+  PreorderBTIterator(TreeNode* root) {
+    if (root != NULL) stk.push(root);
+  }
 
-	TreeNode* next() {
-		while(!stk.empty()) {
-			TreeNode* ret = stk.top();
-			stk.pop();
+  TreeNode* next() {
+    while(!stk.empty()) {
+      TreeNode* ret = stk.top();
+      stk.pop();
 
-			if (ret->right != NULL) stk.push(ret->right);
-			if (ret->left != NULL) stk.push(ret->left);
+      if (ret->right != NULL) stk.push(ret->right);
+      if (ret->left != NULL) stk.push(ret->left);
 
-			return ret;
-		}
-	}
+      return ret;
+    }
+  }
 
-	bool hasNext() {
-		return !stk.empty();
-	}
+  bool hasNext() {
+    return !stk.empty();
+  }
 };
 {% endhighlight %}
 
@@ -72,30 +72,27 @@ Inorder binary tree iterator:
 {% highlight c++ linenos %}
 class InorderBTIterator {
 private:
-	TreeNode* node;
-	stack<TreeNode*> stk;
+  TreeNode* node;
+  stack<TreeNode*> stk;
 public:		
-	InorderBTIterator(TreeNode* root) : node(root) {}
+  InorderBTIterator(TreeNode* root) : node(root) {}
 
-	TreeNode* next() {
-		while(!stk.empty() || node != NULL) {
-			if (node != NULL) {
-				stk.push(node);
-				node = node->left;
-			} else {
-				TreeNode* ret = stk.top();
-				stk.pop();
-				node = ret->right;
-				return ret;
-			}
-		}
+  TreeNode* next() {
+    while(!stk.empty() || node != NULL) {
+      if (node != NULL) {
+        stk.push(node);
+        node = node->left;
+      } else {
+        TreeNode* ret = stk.top();
+        stk.pop();
+        node = ret->right;
+        return ret;
+      }
+    }
+  }
 
-	}
-
-	bool hasNext() {
-		return (!stk.empty() || node != NULL);
-	}
+  bool hasNext() {
+    return (!stk.empty() || node != NULL);
+  }
 };
 {% endhighlight %}
-
-
