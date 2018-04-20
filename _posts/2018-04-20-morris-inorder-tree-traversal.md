@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Morris Inorder Tree Traversal"
-date: 2018-04-19 14:42:00 +0200
+date: 2018-04-20 11:53:00 +0200
 # categories: ['algorithm']
 tags:
   - tree
