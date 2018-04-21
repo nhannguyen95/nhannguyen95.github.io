@@ -15,6 +15,11 @@ $lightGray: #eee;
 $white: #fff;
 $indigo-400: #5C6BC0;
 $indigo-600: #3949AB;
+$indigo-400: #5C6BC0;
+$teal-400: #26A69A;
+$teal-600: #00897B;
+$blue-gray-600: #546E7A;
+$blue-gray-800: #37474F;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
@@ -57,6 +62,10 @@ $tag-index-label-background-color: $oc-gray-2;
 $tag-index-count-background-color: $oc-gray-3;
 $tag-index-label-background-color-tree: $indigo-400;
 $tag-index-count-background-color-tree: $indigo-600;
+$tag-index-label-background-color-heap: $teal-400;
+$tag-index-count-background-color-heap: $teal-600;
+$tag-index-label-background-color-VNOI: $blue-gray-600;
+$tag-index-count-background-color-VNOI: $blue-gray-800;
 
 $footer-border-color: $oc-gray-2;
 $footer-background-color: $oc-gray-1;

@@ -666,10 +666,28 @@ footer {
   }
 }
 
+// Color for tags
+
 #tag-tree {
   background-color: $tag-index-label-background-color-tree;
 }
 
 #tag-count-tree {
   background-color: $tag-index-count-background-color-tree;
+}
+
+#tag-heap {
+  background-color: $tag-index-label-background-color-heap;
+}
+
+#tag-count-heap {
+  background-color: $tag-index-count-background-color-heap;
+}
+
+#tag-VNOI {
+  background-color: $tag-index-label-background-color-VNOI;
+}
+
+#tag-count-VNOI {
+  background-color: $tag-index-count-background-color-VNOI;
 }
