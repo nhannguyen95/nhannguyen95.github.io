@@ -38,16 +38,15 @@ permalink: /categories/
               </a>
             {% for tag in post.tags %}
             <ul class="tag">
-              {% for tag in post.tags %}
               <li>
                 <a id="tag-{{tag}}" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
                   {{ tag }}
                 </a>
               </li>
-              {% endfor %}
             </ul>
             {% endfor %}
             <!-- </span> -->
+
             <span style="float:right;">
               <time>{{ post.date | date: "%Y-%m-%d" }}</time>
             </span>
