@@ -3,22 +3,28 @@ layout: post
 title:  "Week 5 notes: Neural Networks: Learning"
 date: 2017-07-18 14:22:00 +0700
 categories: ['machine learning']
-tags: notes
-no-post-nav: 0
-comments: 1
+tags:
+  - coursera
+  - mooc
+comments: true
+mathjax: true
+content_level: 3
+img :
+summary: My notes on Coursera machine learning course, week 5 by Andrew Ng
 ---
 
-##### **Introduction**
+
+## **Introduction**
 I think week 5 is the hardest week so far, I had to do tons of research on Backpropagation in order to fully understand it. It was really great when I eventually answered all the questions that came to mind.
 
 This note is my attempt to explain the formulas appear in the week 5's videos, hope it helps you to understand it too.
 
 
-##### **Cost Function and Backpropagation**
+## **Cost Function and Backpropagation**
 
-###### **Cost Function**
+### **Cost Function**
 
-###### **Backpropagation Algorithm**
+### **Backpropagation Algorithm**
 As usual, to minimize $$ J(\theta)$$ using Gradient Descent, we need to compute $$ J(\theta)$$ itself and:
 
 $$ \frac{\partial J(\theta)}{\partial \theta_{ij}^{(l)} }$$
@@ -117,7 +123,7 @@ And we have:
 
 $$ \frac{\partial J(\theta)}{\partial \theta_{ij}^{(l)} }=D_{ij}^{(l)}$$
 
-###### **Backpropagation intuition**
+### **Backpropagation intuition**
 
 There is no $$ \delta$$ value for bias units (actually we can still compute it but no need to use it).
 
@@ -131,9 +137,9 @@ Backpropagation is totally opposite to Feedforward propagation, with each traini
 
 and the weight matrices ($$ \theta$$ matrices) are used similarly in two algorithms.
 
-##### **Backpropagation in Practice**
+## **Backpropagation in Practice**
 
-###### **Implementation Note: Unrolling Parameters**
+### **Implementation Note: Unrolling Parameters**
 
 Previously to optimize the cost function of Linear Regression and Logistic Regression, in Octave we do:
 
@@ -167,7 +173,7 @@ theta1 = reshape(thetaVec(1:110), 10, 11);
 theta2 = reshape(thetaVec(111:118), 8, 1);
 {% endhighlight %}
 
-###### **Gradient checking**
+### **Gradient checking**
 
 Two sides difference estimate:
 
@@ -204,7 +210,7 @@ and then check that $$ gradApprox \approx DVec$$, with $$ DVec$$ is the derivati
 
 The main reason why we use the backprop algorithm rather than the numerical gradient computation method during learning is that the numerical gradient algorithm is very slow (and the backprop one is much more efficient).
 
-###### **Random Initialization**
+### **Random Initialization**
 
 In Neural Networks, initializing all $$ \theta$$ values as 0 (or a same value) doesn't work. Because after each update, parameters corresponding to inputs going into each hidden units (headed units) are identical => **highly redundant representation** => prevents the network from doing something interesting.
 
@@ -225,7 +231,7 @@ $$ \epsilon_{init} = \frac{\sqrt{6}}{\sqrt{L_{in} + L_{out}}}$$
 
 where $$ L_{in} = s_{l}$$ and $$ L_{out} = s_{l+1}$$ are the number of units in the layers adjacent to $$ \theta^{(l)}$$.
 
-###### **Putting it together**
+### **Putting it together**
 
 The first thing we need to do when training a networks: **pick some network architecture**. => how many hidden layers, how many units in each layer...
 
@@ -258,13 +264,14 @@ Then disable gradient checking code.
 
 In Neural Networks, $$ J(\theta)$$ is a non-convex function; so gradient descent algorithm can get stuck in local minima. In practice, this is not a huge problem; because it can find a good local optima if it doesn't even get to the global one.
 
-###### **Application of Neural Networks**
+### **Application of Neural Networks**
 
 No notes.
 
-##### **Application of Neural Networks**
+## **Application of Neural Networks**
 
-##### **References**
+## **References**
+
 [1] [Backpropagation Algorithm]( http://ufldl.stanford.edu/wiki/index.php/Backpropagation_Algorithm)
 
 [2] [How to derive errors in neural network with the backpropagation algorithm?](https://stats.stackexchange.com/questions/94387/how-to-derive-errors-in-neural-network-with-the-backpropagation-algorithm)
