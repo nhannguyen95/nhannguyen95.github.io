@@ -48,6 +48,7 @@ void selection_sort(vector<int>& arr) {
 Let's call `N` = length of the array.
 
 **Time complexity**: Regardless of the initial array is sorted or not, time complexity of selection sort is always $O(N^2)$ (proof is similar to [this](https://nhannguyen95.github.io/bubble-sort/#3-complexity-analysis).)
+
 **Space complexity**: $ O(1)$.
 
 ## **4. Properties**
