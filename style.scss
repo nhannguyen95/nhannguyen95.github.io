@@ -693,17 +693,17 @@ footer {
 }
 
 #tag-mooc {
-  background-color: $tag-index-label-background-color-mooc;
+  background-color: $tag-index-label-background-color-mooc !important;
 }
 
 #tag-count-mooc {
-  background-color: $tag-index-count-background-color-mooc;
+  background-color: $tag-index-count-background-color-mooc !important;
 }
 
 #tag-coursera {
-  background-color: $tag-index-label-background-color-coursera;
+  background-color: $tag-index-label-background-color-coursera !important;
 }
 
 #tag-count-coursera {
-  background-color: $tag-index-count-background-color-coursera;
+  background-color: $tag-index-count-background-color-coursera !important;
 }
