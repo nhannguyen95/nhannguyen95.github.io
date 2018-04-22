@@ -56,6 +56,8 @@ Let's call `N` = length of the array.
 
 $$ \sum_{k=1}^{N-1}N-k = (N-1) + (N-2) + .. + 1 = \frac{(N-1)N}{2}$$
 
-Thus the time complexity is $ O(N^2)$.
+Thus the time complexity is $ O(N^2)$ in worst and average case.
+
+In the best case: the array is already sorted, the time complexity is $ O(N)$; it's like the bubble sort algorithm can check if the array is sorted in $ O(N)$ (by checking if there's any swap).
 
 **Space complexity**: $ O(1)$.
