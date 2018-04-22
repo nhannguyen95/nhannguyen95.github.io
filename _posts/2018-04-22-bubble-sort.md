@@ -61,3 +61,7 @@ Thus the time complexity is $ O(N^2)$ in worst and average case.
 In the best case: the array is already sorted, the time complexity is $ O(N)$; it's like the bubble sort algorithm can check if the array is sorted in $ O(N)$ (by checking if there's any swap).
 
 **Space complexity**: $ O(1)$.
+
+## **4. Properties**
+
+* Bubble sort is a [stable sort](https://en.wikipedia.org/wiki/Category:Stable_sorts) algorithm.
