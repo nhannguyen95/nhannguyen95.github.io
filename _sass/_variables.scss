@@ -20,6 +20,10 @@ $teal-400: #26A69A;
 $teal-600: #00897B;
 $blue-gray-600: #546E7A;
 $blue-gray-800: #37474F;
+$red-400: #EF5350;
+$red-600: #E53935;
+$light-blue-400: #29B6F6;
+$light-blue-600: #039BE5;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
@@ -66,6 +70,10 @@ $tag-index-label-background-color-heap: $teal-400;
 $tag-index-count-background-color-heap: $teal-600;
 $tag-index-label-background-color-VNOI: $blue-gray-600;
 $tag-index-count-background-color-VNOI: $blue-gray-800;
+$tag-index-label-background-color-mooc: $red-400;
+$tag-index-count-background-color-mooc: $red-600;
+$tag-index-label-background-color-coursera: $light-blue-400;
+$tag-index-count-background-color-coursera: $light-blue-600;
 
 $footer-border-color: $oc-gray-2;
 $footer-background-color: $oc-gray-1;
