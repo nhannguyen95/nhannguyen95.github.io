@@ -43,25 +43,24 @@ Like I mentioned: if we are sorting the array from index `left` to index `right`
 {% highlight c++ linenos %}
 // overload
 void merge_sort(vector<int>& arr, int left, int right) {
-	
-	int mid = left + (right - left) / 2;
+  int mid = left + (right - left) / 2;
 
-	// Assume that [left, mid] and (mid, right] is sorted,
-	// now we merge them
-	int* temp = new int[right-left+1];
-	int i = left, j = mid+1, k = 0;
-	while(i<=mid && j<=right) {
-		if (arr[i] <= arr[j]) temp[k++] = arr[i++];
-		else temp[k++] = arr[j++];
-	}
-	while(i <= mid) temp[k++] = arr[i++];
-	while(j <= right) temp[k++] = arr[j++];
+  // Assume that [left, mid] and (mid, right] is sorted,
+  // now we merge them
+  int* temp = new int[right-left+1];
+  int i = left, j = mid+1, k = 0;
+  while(i<=mid && j<=right) {
+    if (arr[i] <= arr[j]) temp[k++] = arr[i++];
+    else temp[k++] = arr[j++];
+  }
+  while(i <= mid) temp[k++] = arr[i++];
+  while(j <= right) temp[k++] = arr[j++];
 
-	// Copy temp back to arr[left, right]
-	for(k = left, k <= right; k++)
-		arr[k] = temp[k-left];
+  // Copy temp back to arr[left, right]
+  for(k = left, k <= right; k++)
+    arr[k] = temp[k-left];
 
-	delete temp;
+  delete temp;
 }
 {% endhighlight %}
 
@@ -70,30 +69,30 @@ How do we get the first half and second half sorted? We can do it recursively (d
 {% highlight c++ linenos %}
 void merge_sort(vector<int>& arr, int left, int right) {
   // Base case
-	if (left >= right) return;
+  if (left >= right) return;
   
-	int mid = left + (right - left) / 2;
+  int mid = left + (right - left) / 2;
   
   merge_sort(arr, left, mid);     // sort first half
   merge_sort(arr, mid+1, right);  // sort second half
 
-	// Now we merge them
-	int* temp = new int[right-left+1];
-	int i = left, j = mid+1, k = 0;
-	while(i<=mid && j<=right) {
+  // Now we merge them
+  int* temp = new int[right-left+1];
+  int i = left, j = mid+1, k = 0;
+  while(i<=mid && j<=right) {
     // If tie, take the left one, this makes
     // merge sort stable.
-		if (arr[i] <= arr[j]) temp[k++] = arr[i++];
-		else temp[k++] = arr[j++];
-	}
-	while(i <= mid) temp[k++] = arr[i++];
-	while(j <= right) temp[k++] = arr[j++];
+    if (arr[i] <= arr[j]) temp[k++] = arr[i++];
+    else temp[k++] = arr[j++];
+  }
+  while(i <= mid) temp[k++] = arr[i++];
+  while(j <= right) temp[k++] = arr[j++];
 
-	// Copy temp back to arr[left, right]
-	for(k = left, k <= right; k++)
-		arr[k] = temp[k-left];
+  // Copy temp back to arr[left, right]
+  for(k = left, k <= right; k++)
+    arr[k] = temp[k-left];
 
-	delete temp;
+  delete temp;
 }
 {% endhighlight %}
 
@@ -124,4 +123,3 @@ If using linked-list, we can merge arrays without `temp`, the space complexity i
 ## **4. Properties**
 
 * Merge sort is a stable sort algorithm.
-
