@@ -16,7 +16,7 @@ summary: Implementation and complexity analysis of merge sort algorithm
 
 Say we want to sort an array in ascending order.
 
-The selection sort algorithm's idea is that assuming you're already had the first half and the second half of the array sorted, you can now merge them to create a sorted array (thus the name _merge_ sort).
+The merge sort algorithm's idea is that assuming you're already had the first half and the second half of the array sorted, you can now merge them to create a sorted array (thus the name _merge_ sort).
 
 {% include image.html
   url="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif"
@@ -38,7 +38,7 @@ void merge_sort(vector<int>& arr) {
 }
 {% endhighlight %}
 
-Like I mentioned: if we are sorting the array from index `left` to index `right', and we have the first half and second half sorted, we can merge them in linear time so that the whole `left` to `right` is sorted:
+Like I mentioned: if we are sorting the array from index `left` to index `right`, and we have the first half and second half sorted, we can merge them in linear time so that the whole `left` to `right` is sorted:
 
 {% highlight c++ linenos %}
 // overload
