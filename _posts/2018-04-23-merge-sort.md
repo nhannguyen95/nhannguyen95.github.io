@@ -51,7 +51,7 @@ void merge_sort(vector<int>& arr, int left, int right) {
 	int* temp = new int[right-left+1];
 	int i = left, j = mid+1, k = 0;
 	while(i<=mid && j<=right) {
-		if (arr[i] < arr[j]) temp[k++] = arr[i++];
+		if (arr[i] <= arr[j]) temp[k++] = arr[i++];
 		else temp[k++] = arr[j++];
 	}
 	while(i <= mid) temp[k++] = arr[i++];
