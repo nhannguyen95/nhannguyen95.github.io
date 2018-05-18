@@ -31,7 +31,7 @@ Thuật toán Rabin-Karp xây dựng hàm băm với ý tuởng cơ số: xem m�
 
 Dễ thấy rằng độ phức tạp thời gian để tính mã băm của xâu độ dài $k$ mất $O(k)$. Khi hiện thực thuật toán, ta sẽ "truợt" một thanh có độ dài $m$ trên xâu $T$ từ vị trí $0$ đến $n-m$ để lấy ra tất cả các xâu con độ dài $m$ của $T$ và so sánh mã băm của chúng với mã băm của $P$. Hàm băm đuợc sử dụng có một tính chất rất thú vị là nó giúp ta tính mã băm $h_i$ của xâu hiện tại $T[i..(i+m-1)]$ dựa trên mã băm $h_(i-1)$ của xâu ngay truớc đó $T[(i-1)..(i+m)]$ chỉ trong thời gian $O(1)$ thay vì tính lại trong thời gian $O(m)$. Những hàm băm có tính chất này gọi là rolling hash:
 
-$$h_i = (base \times (h_{i-1} - base^{m-1} \times T[i-1]) + T[i+m-1]) % q$$
+$$h_i = (base \times (h_{i-1} - base^{m-1} \times T[i-1]) + T[i+m-1]) \% q$$
 
 Mã nguồn C++:
 {% highlight c++ linenos %}
