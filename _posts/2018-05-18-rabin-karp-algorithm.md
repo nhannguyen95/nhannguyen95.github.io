@@ -74,5 +74,7 @@ void rabinKarp(string & t, string & p) {
 - Space complexity: $O(1)$.
 
 Tham khảo:
+
 [1]  [Thuật toán Rabin-Karp--- Rabin-Karp algorithm](http://www.giaithuatlaptrinh.com/?p=290)
+
 [2] [Thuật toán Rabin-Karp](http://tin02ch.forums-free.com/thuat-toan-rabin-karp-t127.html)
