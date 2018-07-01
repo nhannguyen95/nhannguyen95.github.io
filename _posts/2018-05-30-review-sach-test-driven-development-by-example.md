@@ -9,7 +9,7 @@ comments: true
 mathjax: true
 content_level: 1
 img: /images/tddbe.png
-summary: Sách phù hợp cho nguời mới bắt đầu với TDD (và unit testing) và muốn biết cách áp dụng cụ thể của nó.
+summary: Sách phù hợp cho nguời đã tìm hiểu về TDD (và unit testing) và muốn biết cách áp dụng cụ thể của nó.
 ---
 
 [Link sách](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530).
