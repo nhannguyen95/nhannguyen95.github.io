@@ -15,20 +15,16 @@ summary: Hiểu thêm về con trỏ trong C/C++ phần 2.
 
 Trích đoạn câu trả lời của [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) trên [Slashdot Interview](http://meta.slashdot.org/story/12/10/11/0030249/linus-torvalds-answers-your-questions):
 
->> I've seen too many people who delete a singly-linked list entry by keeping track of the "prev" entry, and then to delete the entry, doing something like:
+> I've seen too many people who delete a singly-linked list entry by keeping track of the "prev" entry, and then to delete the entry, doing something like:
+>
+> if (prev)
+> 	prev->next = entry->next;
+> else
+> 	head = entry->next;
+>
+> and whenever I see code like that, I just go "This person doesn't understand pointers". And it's sadly quite common. People who understand pointers just use a "pointer to the entry pointer", and initialize that with the address of the list_head. And then as they traverse the list, they can remove the entry without using any conditionals, by just doing:
 
-{% highlight cpp linenos %}
-if (prev)
-	prev->next = entry->next;
-else
-	head = entry->next;
-{% endhighlight %}
-
-and whenever I see code like that, I just go "This person doesn't understand pointers". And it's sadly quite common. People who understand pointers just use a "pointer to the entry pointer", and initialize that with the address of the list_head. And then as they traverse the list, they can remove the entry without using any conditionals, by just doing:
-
-{% highlight cpp linenos %}
-*pp = entry->next;
-{% endhighlight %}
+> *pp = entry->next;
 
 Trong bài này chúng ta sẽ tìm hiểu solution mà Linus đã đề xuất. Trước tiên hãy cùng code hàm xoá một node trong một danh sách liên kết (dslk) đơn mà đa số mọi người thường viết như sau:
 
