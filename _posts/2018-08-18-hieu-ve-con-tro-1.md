@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hiểu về con trỏ trong C/C++"
+title: "Hiểu về con trỏ trong C/C++ phần 1"
 date: 2018-07-20 20:48:00 +0700
 categories: [programming languages]
 tags:
