@@ -69,13 +69,13 @@ Cách code trên không tối ưu ở chỗ nếu muốn xoá một node, chúng
 
 {% highlight cpp linenos %}
 ListNode* entry = head;
-{% endif %}
+{% endhighlight %}
 
 Tương tự như thuật toán đầu tiên, `entry` sẽ duyệt qua toàn bộ node của dslk, và ta cần biết node liền trước của  node mà `entry` đang trỏ đến tại mọi thời điểm. Khi `entry` trỏ đến node đầu tiên, ta có thể xem con trỏ `head` đang nằm trên _STACK_ cũng là một node của dslk và lúc này nó chính là node liền trước của node mà `entry` đang trỏ đến. Một cách tự nhiên, ta cần một con trỏ trỏ đến con trỏ `head` này - một con trỏ cấp 2 (pointer to pointer):
 
 {% highlight cpp linenos %}
 ListNode** pp = &head;
-{% endif %}
+{% endhighlight %}
 
 Minh hoạ bộ nhớ tại thời điểm hiện tại:
 
