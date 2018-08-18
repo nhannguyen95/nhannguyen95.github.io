@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hiểu về con trỏ trong C/C++ phần 2"
-date: 2018-07-20 13:49:00 +0700
+date: 2018-08-18 17:15:00 +0700
 categories: [programming languages]
 tags:
   - c/c++
