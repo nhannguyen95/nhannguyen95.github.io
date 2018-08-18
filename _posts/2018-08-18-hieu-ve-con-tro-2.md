@@ -18,12 +18,12 @@ Trích đoạn câu trả lời của [Linus Torvalds](https://en.wikipedia.org/
 > I've seen too many people who delete a singly-linked list entry by keeping track of the "prev" entry, and then to delete the entry, doing something like:
 >
 > if (prev)
-> 	prev->next = entry->next;
+>   prev->next = entry->next;
 > else
-> 	head = entry->next;
+>   head = entry->next;
 >
 > and whenever I see code like that, I just go "This person doesn't understand pointers". And it's sadly quite common. People who understand pointers just use a "pointer to the entry pointer", and initialize that with the address of the list_head. And then as they traverse the list, they can remove the entry without using any conditionals, by just doing:
-
+>
 > *pp = entry->next;
 
 Trong bài này chúng ta sẽ tìm hiểu solution mà Linus đã đề xuất. Trước tiên hãy cùng code hàm xoá một node trong một danh sách liên kết (dslk) đơn mà đa số mọi người thường viết như sau:
@@ -31,24 +31,21 @@ Trong bài này chúng ta sẽ tìm hiểu solution mà Linus đã đề xuất.
 {% highlight cpp linenos %}
 // Delete `target` node from a singly linked list whose head is `head`.
 void deleteNode(ListNode*& head, ListNode* target) {
-	ListNode* entry = head;
-	ListNode* prev = NULL;
+  ListNode* entry = head;
+  ListNode* prev = NULL;
 
-	while(entry) {
-		if (entry == target) {
-			if (prev) {
-				prev->next = entry->next;
-			} else {
-				head = entry->next;
-			}
-			break;
-		}
+  while(entry) {
+    if (entry == target) {
+      if (prev) prev->next = entry->next;
+      else head = entry->next;
+      break;
+    }
 
-		prev = entry;
-		entry = entry->next;
-	}
+    prev = entry;
+    entry = entry->next;
+  }
 	
-	delete target;
+  delete target;
 }
 {% endhighlight %}
 
@@ -85,18 +82,18 @@ Lúc này, chúng ta sẽ không còn lo đến trường hợp node cần xoá 
 {% highlight cpp linenos %}
 // Delete `target` node from a singly linked list whose head is `head`.
 void deleteNode(ListNode*& head, ListNode* target) {
-    ListNode** pp = &head;
-    ListNode* entry = head;
+  ListNode** pp = &head;
+  ListNode* entry = head;
 
-    while(entry) {
-      if (entry == target) {
-        *pp = entry->next;
-        break;
-      }
-      pp = &(entry->next);
-      entry = entry->next;
+  while(entry) {
+    if (entry == target) {
+      *pp = entry->next;
+      break;
     }
-    delete target;
+    pp = &(entry->next);
+    entry = entry->next;
+  }
+  delete target;
 }
 {% endhighlight %}
 
@@ -105,12 +102,12 @@ Và thậm chí có thể không sử dụng `entry`:
 {% highlight cpp linenos %}
 // Delete `target` node from a singly linked list whose head is `head`.
 void deleteNode(ListNode*& head, ListNode* target) {
-    ListNode** pp = &head;
-    while(*pp != target) {
-      pp = &((*pp)->next);
-    }
-    *pp = target->next;
-    delete target;
+  ListNode** pp = &head;
+  while(*pp != target) {
+    pp = &((*pp)->next);
+  }
+  *pp = target->next;
+  delete target;
 }
 {% endhighlight %}
 
