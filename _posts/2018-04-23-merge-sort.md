@@ -118,7 +118,7 @@ In each `merge_sort` function:
 
 So: $S(N) = max(S(\frac{N}{2}), N) = N$, so the space complexity is $O(N)$.
 
-If using linked-list, we can merge arrays without `temp`, the space complexity is $O(1)$.
+If using linked-list, we can merge arrays without `temp`, the space complexity is $O(logN)$ (the Recursion Depth, or the space of the Call Stack -  part of the computer memory, where a recursive algorithm allocates its temporary data).
 
 ## **4. Properties**
 
