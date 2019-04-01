@@ -10,14 +10,21 @@ layout: default
   {% for post in paginator.posts %}
     <article class="post hover-post">
 
-      <div class = "row">
-        <div class = "col-lg-3 col-md-3 hidden-xs hidden-sm">
-            <a href = "{{ post.img }}" target="_blank"><img src = "{{ post.img }}" class="center-image" style= "max-width: 100%;" > </a>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 hidden-xs hidden-sm">
+            <a href="{{ post.img }}" target="_blank">
+              {% if post.img %}
+              <img src="{{ post.img }}" class="center-image" style= "max-width: 100%;" >
+              {% else %}
+              <img src="/images/default_img.png" class="center-image" style= "max-width: 100%;" >
+              {% endif %}
+            </a>
         </div>
 
-        <div class = "col-lg-9 col-md-9 hidden-xs hidden-sm">
-
-          <a href="{{ site.baseurl }}{{ post.url }}" class="post-link" target="_blank">{{ post.title }}</a>
+        <div class="col-lg-9 col-md-9 hidden-xs hidden-sm">
+          <a href="{{ site.baseurl }}{{ post.url }}" class="post-link" target="_blank">
+            {{ post.title }}
+          </a>
 
           <span class="date" style="float: right;">
             {{ post.date | date: "%Y-%m-%d" }}
@@ -44,12 +51,10 @@ layout: default
           </div>
 
           <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" target="_blank">Read More</a>
-
         </div>
-
       </div>
 
-      <div class = "row">
+      <div class="row">
         <div class = "col-xs-12 col-sm-12 hidden-md hidden-lg">
           <a href="{{ site.baseurl }}{{ post.url }}" class="post-link" target="_blank">{{ post.title }}</a>
 
@@ -79,9 +84,7 @@ layout: default
           </div>
 
           <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" target="_blank">Read More</a>
-
         </div>
-
       </div>
 
     </article>
