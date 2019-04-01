@@ -2,8 +2,9 @@
 layout: post
 title:  "Binary Indexed Tree (BIT)"
 date: 2017-08-01 18:08:00 +0700
-categories:
-tags: bit
+tags:
+  - algorithm
+  - data structure
 no-post-nav: 0
 comments: 1
 ---

@@ -2,8 +2,9 @@
 layout: post
 title:  "Coursera Deep Learning Course 1 Week 3 notes: Shallow neural networks"
 date: 2017-10-10 16:20:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
+tags:
+  - notes
+  - deep learning
 no-post-nav: 0
 comments: 1
 ---

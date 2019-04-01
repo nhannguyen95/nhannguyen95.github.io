@@ -2,8 +2,9 @@
 layout: post
 title:  "Week 8 notes: Unsupervised Learning"
 date: 2017-09-13 09:20:00 +0700
-categories: ['machine learning']
-tags: notes
+tags:
+  - notes
+  - machine learning
 no-post-nav: 0
 comments: 1
 ---

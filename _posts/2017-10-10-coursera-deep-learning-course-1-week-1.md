@@ -2,7 +2,9 @@
 layout: post
 title:  "Coursera Deep Learning Course 1 Week 1 notes: Introduction to deep learning"
 date: 2017-10-10 13:34:00 +0700
-categories: ['machine learning', 'deep learning']
+tags:
+  - notes
+  - deep learning
 tags: notes
 no-post-nav: 0
 comments: 1

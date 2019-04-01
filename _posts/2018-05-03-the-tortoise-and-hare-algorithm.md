@@ -2,9 +2,8 @@
 layout: post
 title: "The Tortoise and Hare algorithm"
 date: 2018-05-03 21:32:00 +0200
-categories: ['algorithm']
 tags:
-  - ad-hoc
+  - algorithm
 comments: true
 mathjax: true
 img:

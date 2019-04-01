@@ -2,9 +2,9 @@
 layout: post
 title:  "Week 2 - Optimization algorithms"
 date: 2017-10-22 09:16:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
-  - Coursera Deep Learning Course 2 - Improving Deep Neural Networks notes
+  - notes
+  - deep learning
 comments: true
 mathjax: true
 content_level: 3

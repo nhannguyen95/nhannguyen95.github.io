@@ -2,9 +2,8 @@
 layout: post
 title: "Selection sort"
 date: 2018-04-22 22:24:00 +0200
-categories: ['algorithm']
 tags:
-  - sorting
+  - algorithm
 comments: true
 mathjax: true
 content_level: 1

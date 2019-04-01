@@ -2,9 +2,9 @@
 layout: post
 title: "Change Github account (user) at local on MacOS"
 date: 2018-07-20 20:48:00 +0700
-categories: [git]
 tags:
-  - 
+  - tech
+  - git
 comments: true
 mathjax: true
 content_level: 1

@@ -2,8 +2,8 @@
 layout: post
 title:  "Tưới nước đồng cỏ"
 date: 2017-08-04 13:48:00 +0700
-categories:
-tags: graph kuskal mst
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

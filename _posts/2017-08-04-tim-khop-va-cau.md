@@ -2,8 +2,8 @@
 layout: post
 title:  "Tìm khớp và cầu"
 date: 2017-08-04 13:03:00 +0700
-categories:
-tags: graph
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

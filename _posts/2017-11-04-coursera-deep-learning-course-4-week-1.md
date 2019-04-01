@@ -2,9 +2,9 @@
 layout: post
 title:  "Week 1 - Foundations of Convolutional Neural Networks"
 date: 2017-11-04 10:52:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
-  - Coursera Deep Learning Course 4 - Convolutional Neural Networks notes
+  - notes
+  - deep learning
 comments: true
 mathjax: true
 content_level: 3

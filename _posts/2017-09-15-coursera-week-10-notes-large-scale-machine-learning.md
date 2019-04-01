@@ -2,8 +2,9 @@
 layout: post
 title:  "Week 10 notes: Large Scale Machine Learning"
 date: 2017-09-15 14:32:00 +0700
-categories: ['machine learning']
-tags: notes
+tags:
+  - notes
+  - machine learning
 no-post-nav: 0
 comments: 1
 ---

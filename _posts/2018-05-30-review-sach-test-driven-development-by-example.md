@@ -2,8 +2,8 @@
 layout: post
 title: "Review sách: Test Driven Development: By Example, Kent Beck (2002)"
 date: 2018-05-28 15:07:00 +0200
-categories: [book review]
 tags:
+  - book review
   - testing
 comments: true
 mathjax: true

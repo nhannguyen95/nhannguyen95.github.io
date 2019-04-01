@@ -2,9 +2,9 @@
 layout: post
 title: "Week 2 - Neural Networks Basics"
 date: 2017-10-10 16:20:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
-  - Coursera Deep Learning Course 1
+  - notes
+  - deep learning
 comments: true
 mathjax: true
 content_level: 3

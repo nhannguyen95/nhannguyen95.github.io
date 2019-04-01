@@ -2,8 +2,8 @@
 layout: post
 title:  "Tổng các ước của một số"
 date: 2017-08-01 16:53:00 +0700
-categories:
-tags: dp
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

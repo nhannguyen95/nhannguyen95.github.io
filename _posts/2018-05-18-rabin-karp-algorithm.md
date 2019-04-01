@@ -2,9 +2,8 @@
 layout: post
 title: "Thuật toán Rabin-Karp"
 date: 2018-05-18 17:49:00 +0200
-categories: ['algorithm']
 tags:
-  - string
+  - algorithm
 comments: true
 mathjax: true
 img:

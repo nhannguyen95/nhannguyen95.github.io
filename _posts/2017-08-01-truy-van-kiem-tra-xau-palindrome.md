@@ -2,8 +2,8 @@
 layout: post
 title:  "Truy vấn kiểm tra xâu palindrome"
 date: 2017-08-01 13:19:00 +0700
-categories:
-tags: palindrome dp string
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

@@ -2,9 +2,8 @@
 layout: post
 title: "Bubble sort"
 date: 2018-04-22 20:43:00 +0200
-categories: ['algorithm']
 tags:
-  - sorting
+  - algorithm
 comments: true
 mathjax: true
 content_level: 1

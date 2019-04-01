@@ -2,8 +2,8 @@
 layout: post
 title:  "Đo lường sự tương tự giữa các đối tượng"
 date: 2017-08-12 14:05:00 +0700
-categories: ['data mining']
 tags:
+  - data mining
 no-post-nav: 0
 comments: 1
 ---

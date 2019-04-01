@@ -2,8 +2,8 @@
 layout: post
 title:  "Các đại lượng số để đo độ tập trung và độ phân tán của dữ liệu"
 date: 2017-08-11 15:46:00 +0700
-categories: ['statistics']
 tags:
+  - statistics
 no-post-nav: 0
 comments: 1
 ---
