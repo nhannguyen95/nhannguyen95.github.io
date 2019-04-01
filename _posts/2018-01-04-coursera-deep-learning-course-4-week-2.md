@@ -2,9 +2,9 @@
 layout: post
 title:  "Week 2 - Deep convolutional models: case studies"
 date: 2018-01-04 13:34:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
-  - Coursera Deep Learning Course 4 - Convolutional Neural Networks notes
+  - notes
+  - deep learning
 comments: true
 mathjax: true
 content_level: 3

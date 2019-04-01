@@ -2,8 +2,8 @@
 layout: post
 title:  "Đổi k kí tự để được xâu con liên tục cùng kí tự dài nhất"
 date: 2017-07-21 13:56:00 +0700
-categories:
-tags: ['two pointers']
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

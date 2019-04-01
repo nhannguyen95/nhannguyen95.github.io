@@ -2,7 +2,6 @@
 layout: post
 title:  "Bài tập Ngôn ngữ hình thức kèm lời giải"
 date: 2018-01-22 09:16:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
   - formal language
 comments: true

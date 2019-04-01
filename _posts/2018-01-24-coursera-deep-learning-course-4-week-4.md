@@ -2,9 +2,9 @@
 layout: post
 title: "Week 4 - Special applications: Face recognition & Neural style transfer"
 date: 2018-01-24 14:14:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
-  - Coursera Deep Learning Course 4 - Convolutional Neural Networks notes
+  - notes
+  - deep learning
 comments: true
 mathjax: true
 content_level: 3

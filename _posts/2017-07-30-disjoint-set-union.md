@@ -2,8 +2,9 @@
 layout: post
 title:  "Disjoint Set Union (DSU)"
 date: 2017-07-30 13:31:00 +0700
-categories:
-tags: dsu
+tags:
+  - algorithm
+  - data structure
 no-post-nav: 0
 comments: 1
 ---

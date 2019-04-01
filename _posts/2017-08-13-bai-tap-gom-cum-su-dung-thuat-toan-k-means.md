@@ -2,8 +2,8 @@
 layout: post
 title:  "Bài tập gom cụm sử dụng thuật toán K-Means"
 date: 2017-08-13 16:09:00 +0700
-categories: ['data mining']
 tags:
+  - data mining
 no-post-nav: 0
 comments: 1
 ---

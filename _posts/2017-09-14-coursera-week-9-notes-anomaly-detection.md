@@ -2,8 +2,9 @@
 layout: post
 title:  "Week 9 notes: Anomaly Detection"
 date: 2017-09-14 22:14:00 +0700
-categories: ['machine learning']
-tags: notes
+tags:
+  - notes
+  - machine learning
 no-post-nav: 0
 comments: 1
 ---

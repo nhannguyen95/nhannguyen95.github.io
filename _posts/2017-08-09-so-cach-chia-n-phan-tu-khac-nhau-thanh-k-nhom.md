@@ -2,8 +2,8 @@
 layout: post
 title:  "Số cách chia N phần tử khác nhau vào K nhóm"
 date: 2017-08-09 16:51:00 +0700
-categories:
-tags: dp
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

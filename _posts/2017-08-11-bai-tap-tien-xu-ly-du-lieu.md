@@ -2,8 +2,8 @@
 layout: post
 title:  "Bài tập tiền xử lý dữ liệu"
 date: 2017-08-11 16:41:00 +0700
-categories: ['data mining']
 tags:
+  - data mining
 no-post-nav: 0
 comments: 1
 ---

@@ -2,8 +2,8 @@
 layout: post
 title:  "Truy vấn tổng các phần tử của hình chữ nhật con"
 date: 2017-08-01 20:07:00 +0700
-categories:
-tags: dp
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

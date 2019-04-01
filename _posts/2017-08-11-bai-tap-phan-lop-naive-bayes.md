@@ -2,8 +2,8 @@
 layout: post
 title:  "Bài tập phân lớp sử dụng Naive Bayes"
 date: 2017-08-11 23:40:00 +0700
-categories: ['data mining']
 tags:
+  - data mining
 no-post-nav: 0
 comments: 1
 ---

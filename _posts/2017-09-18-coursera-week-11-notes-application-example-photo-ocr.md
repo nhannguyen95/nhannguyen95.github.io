@@ -2,8 +2,9 @@
 layout: post
 title:  "Week 11 notes: Application Example: Photo OCR"
 date: 2017-09-18 13:17:00 +0700
-categories: ['machine learning']
-tags: notes
+tags:
+  - notes
+  - machine learning
 no-post-nav: 0
 comments: 1
 ---

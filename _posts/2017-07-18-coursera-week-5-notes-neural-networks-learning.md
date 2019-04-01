@@ -2,10 +2,9 @@
 layout: post
 title:  "Week 5 notes: Neural Networks: Learning"
 date: 2017-07-18 14:22:00 +0700
-categories: ['machine learning']
 tags:
-  - coursera
-  - mooc
+  - notes
+  - machine learning
 comments: true
 mathjax: true
 content_level: 3

@@ -2,8 +2,9 @@
 layout: post
 title:  "Week 7 notes: Support Vector Machines"
 date: 2017-08-30 13:47:00 +0700
-categories: ['machine learning']
-tags: notes
+tags:
+  - notes
+  - machine learning
 no-post-nav: 0
 comments: 1
 ---

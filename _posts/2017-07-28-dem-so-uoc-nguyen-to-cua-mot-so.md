@@ -2,8 +2,8 @@
 layout: post
 title:  "Đếm số ước nguyên tố của một số"
 date: 2017-07-28 15:23:00 +0700
-categories:
-tags: ['eratosthenes', 'prime number']
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

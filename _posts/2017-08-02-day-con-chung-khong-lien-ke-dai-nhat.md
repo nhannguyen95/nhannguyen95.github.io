@@ -2,8 +2,8 @@
 layout: post
 title:  "Dãy con chung không liền kề dài nhất"
 date: 2017-08-02 22:57:00 +0700
-categories:
-tags: dp
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

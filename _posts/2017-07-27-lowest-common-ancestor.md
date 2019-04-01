@@ -2,8 +2,8 @@
 layout: post
 title:  "Lowest Common Ancestor"
 date: 2017-07-27 21:50:00 +0700
-categories:
-tags: lca
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

@@ -2,8 +2,8 @@
 layout: post
 title:  "Các loại dữ liệu trong khai phá dữ liệu"
 date: 2017-08-11 15:31:00 +0700
-categories: ['data mining']
 tags:
+  - data mining
 no-post-nav: 0
 comments: 1
 ---

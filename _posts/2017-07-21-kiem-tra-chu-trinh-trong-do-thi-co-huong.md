@@ -2,8 +2,8 @@
 layout: post
 title:  "Kiểm tra chu trình trong đồ thị có hướng"
 date: 2017-07-21 13:56:00 +0700
-categories:
-tags: dfs
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

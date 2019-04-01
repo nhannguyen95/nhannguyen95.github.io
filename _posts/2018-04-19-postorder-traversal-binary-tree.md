@@ -2,9 +2,8 @@
 layout: post
 title: "Postorder traversal on binary tree"
 date: 2018-04-19 16:49:00 +0200
-categories: ['algorithm']
 tags:
-  - tree
+  - algorithm
 comments: true
 mathjax: true
 content_level: 1

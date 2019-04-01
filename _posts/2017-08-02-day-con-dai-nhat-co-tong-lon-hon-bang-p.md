@@ -2,8 +2,8 @@
 layout: post
 title:  "Dãy con dài nhất có tổng lớn hơn bằng p"
 date: 2017-08-02 22:13:00 +0700
-categories:
-tags: dp
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

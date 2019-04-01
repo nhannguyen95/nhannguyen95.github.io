@@ -2,8 +2,9 @@
 layout: post
 title:  "Coursera Deep Learning Course 2 Week 1 notes: Practical aspects of Deep Learning"
 date: 2017-10-20 16:20:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
+tags:
+  - notes
+  - deep learning
 no-post-nav: 0
 comments: 1
 ---

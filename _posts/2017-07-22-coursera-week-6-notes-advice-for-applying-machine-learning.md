@@ -2,8 +2,9 @@
 layout: post
 title:  "Week 6 notes: Advice for applying machine learning"
 date: 2017-07-22 10:24:00 +0700
-categories: ['machine learning']
-tags: notes
+tags:
+  - notes
+  - machine learning
 no-post-nav: 0
 comments: 1
 ---

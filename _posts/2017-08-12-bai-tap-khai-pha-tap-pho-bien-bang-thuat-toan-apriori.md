@@ -2,8 +2,8 @@
 layout: post
 title:  "Bài tập khai phá tập phổ biến bằng thuật toán Apriori"
 date: 2017-08-12 16:46:00 +0700
-categories: ['data mining']
 tags:
+  - data mining
 no-post-nav: 0
 comments: 1
 ---

@@ -2,9 +2,9 @@
 layout: post
 title:  "Week 3 - Object detection"
 date: 2018-01-13 19:53:00 +0700
-# categories: ['machine learning', 'deep learning']
 tags:
-  - Coursera Deep Learning Course 4 - Convolutional Neural Networks notes
+  - notes
+  - deep learning
 comments: true
 mathjax: true
 content_level: 3

@@ -2,8 +2,8 @@
 layout: post
 title:  "Trò chơi với băng số"
 date: 2017-08-02 22:25:00 +0700
-categories:
-tags: dp
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

@@ -2,8 +2,8 @@
 layout: post
 title:  "Số số nguyên tố nhỏ nhất có tổng bằng N"
 date: 2017-07-21 14:34:00 +0700
-categories:
-tags: ['math', 'prime number']
+tags:
+  - algorithm
 no-post-nav: 0
 comments: 1
 ---

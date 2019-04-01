@@ -2,7 +2,6 @@
 layout: post
 title:  "Bài tập xây dựng cây quyết định sử dụng thuật toán ID3"
 date: 2017-08-11 17:19:00 +0700
-# categories: ['data mining']
 tags:
   - data mining
 comments: true

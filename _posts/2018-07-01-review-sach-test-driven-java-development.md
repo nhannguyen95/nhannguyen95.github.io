@@ -2,8 +2,8 @@
 layout: post
 title: "Review sách: Test-Driven Java Development. Viktor Farcic, Alex Garcia (2015)"
 date: 2018-07-01 15:25:00 +0700
-categories: [book review]
 tags:
+  - book review
   - testing
 comments: true
 mathjax: true

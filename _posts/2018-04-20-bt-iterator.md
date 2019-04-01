@@ -2,9 +2,9 @@
 layout: post
 title: "Binary tree iterators"
 date: 2018-04-20 12:54:00 +0200
-categories: ['algorithm']
 tags:
-  - tree
+  - algorithm
+  - data structure
 comments: true
 mathjax: true
 content_level: 1

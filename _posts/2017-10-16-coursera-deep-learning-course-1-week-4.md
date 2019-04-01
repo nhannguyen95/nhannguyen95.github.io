@@ -2,8 +2,9 @@
 layout: post
 title:  "Coursera Deep Learning Course 1 Week 4 notes: Deep neural networks"
 date: 2017-10-16 14:59:00 +0700
-categories: ['machine learning', 'deep learning']
-tags: notes
+tags:
+  - notes
+  - deep learning
 no-post-nav: 0
 comments: 1
 ---
