@@ -14,10 +14,10 @@ layout: default
   </span>
 
   <div clsss="meta">
-    <ul class="tag">
+    <ul class="tags">
       {% for tag in page.tags %}
       <li>
-        <a id="tag-{{tag}}" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+        <a class="tag-text" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
           {{ tag }}
         </a>
       </li>

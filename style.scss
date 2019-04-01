@@ -416,7 +416,7 @@ nav {
   border-bottom: none;
 }
 
-.tag {
+.tags {
   display: inline;
   font-weight: 300;
   font-size: $small-font-size;
@@ -435,8 +435,6 @@ nav {
       color: $oc-white;
       display: inline-block;
       line-height: 18px;
-      // background-color: $tag-index-label-background-color;
-      // border-radius: 3px;
     }
   }
 }
@@ -526,7 +524,6 @@ nav {
       display: inline-block;
       margin: 1px;
       color: $oc-white;
-      // background-color: $tag-index-label-background-color;
       border-radius: 3px;
 
       span {
@@ -534,7 +531,6 @@ nav {
         padding: .5px 5px;
 
         &.count {
-          // background-color: $tag-index-count-background-color;
           border-radius: 0 3px 3px 0;
         }
       }
@@ -666,60 +662,15 @@ footer {
   }
 }
 
-// Color for tags
+.tags {
+  .tag-text {
+    background-color: #546E7A;
+    color: white;
+  }
 
-#tag-tree {
-  background-color: $tag-index-label-background-color-tree;
+  .tag-count {
+    background-color: #37474F;
+  } 
 }
 
-#tag-count-tree {
-  background-color: $tag-index-count-background-color-tree;
-}
 
-#tag-heap {
-  background-color: $tag-index-label-background-color-heap;
-}
-
-#tag-count-heap {
-  background-color: $tag-index-count-background-color-heap;
-}
-
-#tag-VNOI {
-  background-color: $tag-index-label-background-color-VNOI;
-}
-
-#tag-count-VNOI {
-  background-color: $tag-index-count-background-color-VNOI;
-}
-
-#tag-mooc {
-  background-color: $tag-index-label-background-color-mooc !important;
-}
-
-#tag-count-mooc {
-  background-color: $tag-index-count-background-color-mooc !important;
-}
-
-#tag-coursera {
-  background-color: $tag-index-label-background-color-coursera !important;
-}
-
-#tag-count-coursera {
-  background-color: $tag-index-count-background-color-coursera !important;
-}
-
-#tag-sorting {
-  background-color: $tag-index-label-background-color-sorting !important;
-}
-
-#tag-count-sorting {
-  background-color: $tag-index-count-background-color-sorting !important;
-}
-
-#tag-ad-hoc {
-  background-color: $tag-index-label-background-color-mooc !important;
-}
-
-#tag-count-ad-hoc {
-  background-color: $tag-index-count-background-color-mooc  !important;
-}

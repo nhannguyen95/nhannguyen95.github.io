@@ -37,9 +37,9 @@ permalink: /categories/
                 {{ post.title }}
               </a>
             {% for tag in post.tags %}
-            <ul class="tag">
+            <ul class="tags">
               <li>
-                <a id="tag-{{tag}}" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+                <a class="tag-text" href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
                   {{ tag }}
                 </a>
               </li>
